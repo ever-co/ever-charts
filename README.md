@@ -1,2 +1,3 @@
-# ever-gauzy-charts
-Helm Charts for Ever Gauzy
+# Ever Gauzy Helm Charts
+
+Helm Charts for Ever Gauzy Platform
