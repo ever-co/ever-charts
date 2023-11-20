@@ -1,5 +1,9 @@
 # Ever Gauzy Helm Charts
 
+[uri_gauzy]: https://gauzy.co
+[uri_license]: https://www.gnu.org/licenses/agpl-3.0.html
+[uri_license_image]: https://img.shields.io/badge/License-AGPL%20v3-blue.svg
+
 ![visitors](https://visitor-badge.laobi.icu/badge?page_id=ever-co.ever-gauzy-charts)
 [![License: AGPL v3][uri_license_image]][uri_license]
 
