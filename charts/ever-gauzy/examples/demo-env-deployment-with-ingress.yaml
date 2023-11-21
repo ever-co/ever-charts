@@ -81,9 +81,3 @@ api:
   envs:
     - name: EXPRESS_SESSION_SECRET
       value: "gauzy"
-    - name: JWT_SECRET
-      value: "secretKey"
-    - name: JWT_REFRESH_TOKEN_SECRET
-      value: "refreshSecretKey"
-    - name: JWT_REFRESH_TOKEN_EXPIRATION_TIME
-      value: "86400"

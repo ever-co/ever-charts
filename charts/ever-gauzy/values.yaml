@@ -109,6 +109,10 @@ api:
     sentryDsn: ""
     sentryHttpTracingEnabled: false
     sentryPostgresTrackingEnabled: flase
+  jwt:
+    jwtSecret: "changeMe"
+    jwtRefreshTokenSecret: "changeMe"
+    jwtRefreshTokenExpirationTime: "86400"
 
 
   podAnnotations: {}
