@@ -108,7 +108,7 @@ api:
   sentry:
     sentryDsn: ""
     sentryHttpTracingEnabled: false
-    sentryPostgresTrackingEnabled: flase
+    sentryPostgresTrackingEnabled: false
   jwt:
     jwtSecret: "changeMe"
     jwtRefreshTokenSecret: "changeMe"
