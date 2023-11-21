@@ -1,0 +1,21 @@
+apiVersion: v2
+name: ever-gauzy
+description: A Helm chart for ever-gauzy and ever-gauzy is for Work & Project Management.
+type: application
+version: 0.1.0
+appVersion: "1.16.0"
+keywords:
+  - "ever-gauzy"
+dependencies:
+  - name: postgresql
+    condition: global.env.production
+    version: "13.2.9"
+    repository: https://charts.bitnami.com/bitnami
+home: https://gauzy.co
+sources:
+  - "https://github.com/ever-co/ever-gauzy-charts"
+maintainers:
+  - name: Saif Zaman
+    email: saif.mektek@gmail.com
+  - name: Ruslan Konviser
+    email: evereq@gmail.com
