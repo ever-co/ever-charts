@@ -43,6 +43,14 @@ spec:
               value: 0.0.0.0
             - name: NODE_ENV
               value: {{ include "ever-gauzy.nodeenv" . | quote }}
+            - name: API_BASE_URL
+              value: {{ .Values.api.baseUrl.api | quote }}
+            - name: CLIENT_BASE_URL
+              value: {{ .Values.api.baseUrl.client | quote }}
+            - name: ADMIN_PASSWORD_RESET
+              value: {{ .Values.api.adminPasswordReset | quote }}
+            - name: LOG_LEVEL
+              value: {{ .Values.api.loglevel | quote }}
           imagePullPolicy: {{ .Values.api.image.pullPolicy }}
           ports:
             - name: http
