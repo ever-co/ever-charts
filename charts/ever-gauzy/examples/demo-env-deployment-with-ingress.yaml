@@ -61,6 +61,8 @@ api:
   baseUrl:
     api: "apidemo-gauzy.example.com"
     client: "demo-gauzy.example.com"
+  sentry:
+    sentryDsn: "https://7cd381188b6f446ca0e69185227b9031@o51327.ingest.sentry.io/4397292"
   ingress:
     enabled: true
     className: "nginx"
@@ -77,12 +79,6 @@ api:
        hosts:
          - apidemo-gauzy.example.com
   envs:
-    - name: SENTRY_DSN
-      value: "https://7cd381188b6f446ca0e69185227b9031@o51327.ingest.sentry.io/4397292"
-    - name: SENTRY_HTTP_TRACING_ENABLED
-      value: "false"
-    - name: SENTRY_POSTGRES_TRACKING_ENABLED
-      value: "false"
     - name: EXPRESS_SESSION_SECRET
       value: "gauzy"
     - name: JWT_SECRET

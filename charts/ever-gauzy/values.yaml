@@ -104,6 +104,11 @@ api:
   baseUrl:
     api: ""
     client: ""
+  # sentry configuration for api
+  sentry:
+    sentryDsn: ""
+    sentryHttpTracingEnabled: false
+    sentryPostgresTrackingEnabled: flase
 
 
   podAnnotations: {}
