@@ -33,10 +33,16 @@ spec:
           securityContext:
             {{- toYaml .Values.api.securityContext | nindent 12 }}
           image: "{{ .Values.api.image.repository }}:{{ .Values.api.image.tag | default .Chart.AppVersion }}"
-          {{- with .Values.api.envs }}
           env:
-            {{- toYaml . | nindent 12 }}
-          {{- end }}
+            {{- with .Values.webapp.envs }}
+            {{- . | toYaml | trim | nindent 12 }}
+            {{- end }}
+            - name: DEMO
+              value: {{ include "ever-gauzy.demoenv" . | quote }}
+            - name: API_HOST
+              value: 0.0.0.0
+            - name: NODE_ENV
+              value: {{ include "ever-gauzy.nodeenv" . | quote }}
           imagePullPolicy: {{ .Values.api.image.pullPolicy }}
           ports:
             - name: http

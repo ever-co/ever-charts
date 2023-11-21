@@ -18,8 +18,6 @@ webapp:
        hosts:
          - demo-gauzy.example.com
   envs:
-    - name: DEMO
-      value: "true"
     - name: API_BASE_URL
       value: "https://apidemo-gauzy.example.com"
     - name: CLIENT_BASE_URL
@@ -74,12 +72,6 @@ api:
        hosts:
          - apidemo-gauzy.example.com
   envs:
-    - name: API_HOST
-      value: 0.0.0.0
-    - name: DEMO
-      value: "true"
-    - name: NODE_ENV
-      value: "development"
     - name: ADMIN_PASSWORD_RESET
       value: "true"
     - name: LOG_LEVEL

@@ -116,10 +116,17 @@ Create the name of the service account to use
 {{/*
 Create a variable based on demo env
 */}}
-{{- define "ever-gauzy.postgresql.enable" -}}
+{{- define "ever-gauzy.demoenv" -}}
 {{- if not .Values.global.env.demo -}}
 true
 {{- else -}}
 false
+{{- end -}}
+{{- end -}}
+{{- define "ever-gauzy.nodeenv" -}}
+{{- if not .Values.global.env.demo -}}
+development
+{{- else -}}
+production
 {{- end -}}
 {{- end -}}

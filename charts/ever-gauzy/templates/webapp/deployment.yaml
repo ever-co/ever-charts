@@ -33,10 +33,12 @@ spec:
           securityContext:
             {{- toYaml .Values.webapp.securityContext | nindent 12 }}
           image: "{{ .Values.webapp.image.repository }}:{{ .Values.webapp.image.tag | default .Chart.AppVersion }}"
-          {{- with .Values.webapp.envs }}
           env:
-            {{- toYaml . | nindent 12 }}
-          {{- end }}
+            {{- with .Values.webapp.envs }}
+            {{- . | toYaml | trim | nindent 12 }}
+            {{- end }}
+            - name: DEMO
+              value: {{ include "ever-gauzy.demoenv" . | quote }}
           imagePullPolicy: {{ .Values.webapp.image.pullPolicy }}
           ports:
             - name: http
