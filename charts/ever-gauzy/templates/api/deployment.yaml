@@ -44,9 +44,9 @@ spec:
             - name: NODE_ENV
               value: {{ include "ever-gauzy.nodeenv" . | quote }}
             - name: API_BASE_URL
-              value: {{ .Values.api.baseUrl.api | quote }}
+              value: {{ .Values.global.baseUrls.api | quote }}
             - name: CLIENT_BASE_URL
-              value: {{ .Values.api.baseUrl.client | quote }}
+              value: {{ .Values.global.baseUrls.client | quote }}
             - name: ADMIN_PASSWORD_RESET
               value: {{ .Values.api.adminPasswordReset | quote }}
             - name: LOG_LEVEL

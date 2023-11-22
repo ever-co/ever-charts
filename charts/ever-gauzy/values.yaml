@@ -1,6 +1,11 @@
+# Global configurations
 global:
   env:
-    production: false
+    production: false  # Set the environment to production (true) or development (false)
+
+  baseUrls:
+    api: ""  # Set the base URL for the API
+    client: ""  # Set the base URL for the clien
 
 webapp:
   replicaCount: 1
@@ -23,6 +28,35 @@ webapp:
     # If not set and create is true, a name is generated using the fullname template
     name: ""
   
+  # App configurations
+
+  # Configurations for Cloudinary
+  cloudinary:
+    apiKey: ""  # Insert your Cloudinary API key here
+    cloudName: ""  # Insert your Cloudinary cloud name here
+
+  # Configurations for Google Maps
+  googleMap:
+    apiKey: ""  # Insert your Google Maps API key here
+    autoComplete: true  # Enable or disable the auto-complete feature
+    defaultLatitude: "42.6459136"  # Set the default latitude for map center
+    defaultLongitude: "23.3332736"  # Set the default longitude for map center
+    defaultCurrency: "USD"  # Set the default currency for location
+
+  # Configurations for GitHub app
+  gitHub:
+    clientId: ""  # Insert your GitHub client ID here
+    appName: ""  # Specify the name of your GitHub app
+    redirectUrl: ""  # Insert the redirect URL for GitHub authentication
+    postInstallUrl: ""  # Specify the URL to redirect to after GitHub app installation
+    appId: ""  # Insert your GitHub app ID here
+
+  # Configurations for Jitsu
+  jitsu:
+    browserUrl: ""  # Insert the Jitsu browser URL here
+    browserWriteKey: ""  # Insert the Jitsu browser write key here
+
+
   podAnnotations: {}
   podLabels: {}
 
@@ -99,20 +133,21 @@ api:
     name: ""
   
   # app configurations
-  loglevel: "info"
-  adminPasswordReset: true
-  baseUrl:
-    api: ""
-    client: ""
-  # sentry configuration for api
+  loglevel: "info"  # Set the log level to "info"
+
+  adminPasswordReset: true  # Enable or disable admin password reset feature
+
+  # Sentry configuration for API
   sentry:
-    sentryDsn: ""
-    sentryHttpTracingEnabled: false
-    sentryPostgresTrackingEnabled: false
+    sentryDsn: ""  # Insert your Sentry DSN (Data Source Name) here
+    sentryHttpTracingEnabled: false  # Enable or disable Sentry HTTP tracing
+    sentryPostgresTrackingEnabled: false  # Enable or disable Sentry Postgres tracking
+
+  # JWT (JSON Web Token) configuration
   jwt:
-    jwtSecret: "changeMe"
-    jwtRefreshTokenSecret: "changeMe"
-    jwtRefreshTokenExpirationTime: "86400"
+    jwtSecret: "changeMe"  # Set the secret key for JWT, replace "changeMe" with a secure key
+    jwtRefreshTokenSecret: "changeMe"  # Set the refresh token secret, replace "changeMe" with a secure key
+    jwtRefreshTokenExpirationTime: "86400"  # Set the expiration time for JWT refresh tokens in seconds (e.g., 86400 seconds = 1 day)
 
 
   podAnnotations: {}

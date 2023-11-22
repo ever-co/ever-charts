@@ -1,7 +1,19 @@
 global:
   env:
     production: false
+  baseUrls:
+    api: "apidemo-gauzy.example.com"
+    client: "demo-gauzy.example.com"
 webapp:
+  cloudinary:
+    apiKey: "256868982483961"
+    cloudName: "dv6ezkfxg"
+
+  googleMap:
+    apiKey: "AIzaSyCJmnKzgTSq5Pc93HXar5bZrdmANTwtSIo"
+    defaultLatitude: "42.6459136"
+    defaultLongitude: "23.3332736"
+
   ingress:
     enabled: true
     className: "nginx"
@@ -18,49 +30,14 @@ webapp:
        hosts:
          - demo-gauzy.example.com
   envs:
-    - name: API_BASE_URL
-      value: "https://apidemo-gauzy.example.com"
-    - name: CLIENT_BASE_URL
-      value: "https://demo-gauzy.example.com"
     - name: SENTRY_DSN
       value: "https://7cd381188b6f446ca0e69185227b9031@o51327.ingest.sentry.io/4397292"
     - name: CHATWOOT_SDK_TOKEN
       value: "jFoSXEjGmqhUhqU3zfgkFfMt"
-    - name: CLOUDINARY_API_KEY
-      value: "256868982483961"
-    - name: CLOUDINARY_CLOUD_NAME
-      value: "dv6ezkfxg"
-    - name: GOOGLE_MAPS_API_KEY
-      value: "AIzaSyCJmnKzgTSq5Pc93HXar5bZrdmANTwtSIo"
-    - name: GOOGLE_PLACE_AUTOCOMPLETE
-      value: "true"
-    - name: DEFAULT_LATITUDE
-      value: "42.6459136"
-    - name: DEFAULT_LONGITUDE
-      value: "23.3332736"
-    - name: DEFAULT_CURRENCY
-      value: "USD"
-    - name: GAUZY_GITHUB_CLIENT_ID
-      value: "$GAUZY_GITHUB_CLIENT_ID"
-    - name: GAUZY_GITHUB_APP_NAME
-      value: "$GAUZY_GITHUB_APP_NAME"
-    - name: GAUZY_GITHUB_REDIRECT_URL
-      value: "$GAUZY_GITHUB_REDIRECT_URL"
-    - name: GAUZY_GITHUB_POST_INSTALL_URL
-      value: "$GAUZY_GITHUB_POST_INSTALL_URL"
-    - name: GAUZY_GITHUB_APP_ID
-      value: "$GAUZY_GITHUB_APP_ID"
-    - name: JITSU_BROWSER_URL
-      value: "$JITSU_BROWSER_URL"
-    - name: JITSU_BROWSER_WRITE_KEY
-      value: "$JITSU_BROWSER_WRITE_KEY"
 
 api:
   loglevel: "info"
   adminPasswordReset: true
-  baseUrl:
-    api: "apidemo-gauzy.example.com"
-    client: "demo-gauzy.example.com"
   sentry:
     sentryDsn: "https://7cd381188b6f446ca0e69185227b9031@o51327.ingest.sentry.io/4397292"
   ingress:

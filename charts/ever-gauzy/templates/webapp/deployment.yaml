@@ -39,6 +39,38 @@ spec:
             {{- end }}
             - name: DEMO
               value: {{ include "ever-gauzy.demoenv" . | quote }}
+            - name: API_BASE_URL
+              value: {{ .Values.global.baseUrls.api | quote }}
+            - name: CLIENT_BASE_URL
+              value: {{ .Values.global.baseUrls.client | quote }}
+            - name: CLOUDINARY_API_KEY
+              value: {{ .Values.webapp.cloudinary.apiKey | quote }}
+            - name: CLOUDINARY_CLOUD_NAME
+              value: {{ .Values.webapp.cloudinary.cloudName | quote }}
+            - name: GOOGLE_MAPS_API_KEY
+              value: {{ .Values.webapp.googleMap.apiKey | quote }}
+            - name: GOOGLE_PLACE_AUTOCOMPLETE
+              value: {{ .Values.webapp.googleMap.autoComplete | quote }}
+            - name: DEFAULT_LATITUDE
+              value: {{ .Values.webapp.googleMap.defaultLatitude | quote }}
+            - name: DEFAULT_LONGITUDE
+              value: {{ .Values.webapp.googleMap.defaultLongitude | quote }}
+            - name: DEFAULT_CURRENCY
+              value: {{ .Values.webapp.googleMap.defaultCurrency | quote }}
+            - name: GAUZY_GITHUB_CLIENT_ID
+              value: {{ .Values.webapp.gitHub.clientId | quote }}
+            - name: GAUZY_GITHUB_APP_NAME
+              value: {{ .Values.webapp.gitHub.appName | quote }}
+            - name: GAUZY_GITHUB_REDIRECT_URL
+              value: {{ .Values.webapp.gitHub.redirectUrl | quote }}
+            - name: GAUZY_GITHUB_POST_INSTALL_URL
+              value: {{ .Values.webapp.gitHub.postInstallUrl | quote }}
+            - name: GAUZY_GITHUB_APP_ID
+              value: {{ .Values.webapp.gitHub.appId | quote }}
+            - name: JITSU_BROWSER_URL
+              value: {{ .Values.webapp.jitsu.browserUrl | quote }}
+            - name: JITSU_BROWSER_WRITE_KEY
+              value: {{ .Values.webapp.jitsu.browserWriteKey | quote }}
           imagePullPolicy: {{ .Values.webapp.image.pullPolicy }}
           ports:
             - name: http
