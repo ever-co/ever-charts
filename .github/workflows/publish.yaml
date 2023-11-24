@@ -1,0 +1,31 @@
+name: "Publish Charts"
+on:
+  push:
+    branches:
+      - develop
+
+jobs:
+
+  codespell:
+    name: Codespell
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+      - name: Codespell
+        uses: codespell-project/actions-codespell@master
+        with:
+          ignore_words_list: iam,aks
+          check_filenames: true
+          check_hidden: true
+
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Publish Charts
+        uses: J12934/helm-gh-pages-action@master
+        with:
+          deploy-branch: gh-pages
+          access-token: ${{ secrets.ACCESS_TOKEN }}
