@@ -130,3 +130,13 @@ development
 production
 {{- end -}}
 {{- end -}}
+{{/*
+Set postgresql port
+*/}}
+{{- define "postgresql.servicePort" -}}
+{{- if eq . "" -}}
+  {{- printf "5432" -}}
+{{- else -}}
+  {{- printf . -}}
+{{- end -}}
+{{- end -}}

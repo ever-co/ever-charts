@@ -57,6 +57,16 @@ spec:
               value: {{ .Values.api.sentry.sentryHttpTracingEnabled | quote }}
             - name: SENTRY_POSTGRES_TRACKING_ENABLED
               value: {{ .Values.api.sentry.sentryPostgresTrackingEnabled | quote }}
+            - name: DB_HOST
+              value: "{{ .Release.Name }}-postgresql"
+            - name: DB_USER
+              value: {{ .Values.postgresql.global.postgresql.auth.username | quote }}
+            - name: DB_PASS
+              value: {{ .Values.postgresql.global.postgresql.auth.password | quote }}
+            - name: DB_NAME
+              value: {{ .Values.postgresql.global.postgresql.auth.database | quote }}
+            - name: DB_PORT
+              value: {{ include "postgresql.servicePort" .Values.postgresql.global.postgresql.service.ports.postgresql | quote }}
           imagePullPolicy: {{ .Values.api.image.pullPolicy }}
           ports:
             - name: http
