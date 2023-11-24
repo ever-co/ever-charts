@@ -1,6 +1,6 @@
 apiVersion: v2
 name: ever-gauzy
-description: A Helm chart for ever-gauzy and ever-gauzy is for Work & Project Management.
+description: A Helm chart for Ever Gauzy Platform
 type: application
 version: 0.1.4
 appVersion: "1.16.0"
@@ -15,7 +15,5 @@ home: https://gauzy.co
 sources:
   - "https://github.com/ever-co/ever-gauzy-charts"
 maintainers:
-  - name: Saif Zaman
-    email: saif.mektek@gmail.com
-  - name: Ruslan Konviser
-    email: evereq@gmail.com
+  - name: Ever Co. LTD
+    email: ever@ever.co
