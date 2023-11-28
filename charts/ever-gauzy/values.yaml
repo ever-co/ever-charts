@@ -149,6 +149,18 @@ api:
     jwtRefreshTokenSecret: "changeMe"  # Set the refresh token secret, replace "changeMe" with a secure key
     jwtRefreshTokenExpirationTime: "86400"  # Set the expiration time for JWT refresh tokens in seconds (e.g., 86400 seconds = 1 day)
 
+  s3:
+    awsAccessKeyId: ""
+    awsSecretAccessKey: ""
+    awsRegion: ""
+    awsS3Bucket: ""
+
+  wasabi-s3:
+    wasabiAccessKeyId: ""
+    wasabiSecretAccessKey: ""
+    wasabiRegion: ""
+    wasabiServiceUrl:
+    wasabiS3Bucket: ""
 
   podAnnotations: {}
   podLabels: {}
