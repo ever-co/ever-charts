@@ -67,6 +67,24 @@ spec:
               value: {{ .Values.postgresql.global.postgresql.auth.database | quote }}
             - name: DB_PORT
               value: {{ include "postgresql.servicePort" .Values.postgresql.global.postgresql.service.ports.postgresql | quote }}
+            - name: AWS_ACCESS_KEY_ID
+              value: {{ .Values.api.s3.awsAccessKeyId | quote }}
+            - name: AWS_SECRET_ACCESS_KEY
+              value: {{ .Values.api.s3.awsSecretAccessKey | quote }}
+            - name: AWS_REGION
+              value: {{ .Values.api.s3.awsRegion | quote }}
+            - name: AWS_S3_BUCKET
+              value: {{ .Values.api.s3.awsS3Bucket | quote }}
+            - name: WASABI_ACCESS_KEY_ID
+              value: {{ .Values.api.wasabi-s3.wasabiAccessKeyId | quote }}
+            - name: WASABI_SECRET_ACCESS_KEY
+              value: {{ .Values.api.wasabi-s3.wasabiSecretAccessKey | quote }}
+            - name: WASABI_REGION
+              value: {{ .Values.api.wasabi-s3.wasabiRegion | quote }}
+            - name: WASABI_SERVICE_URL
+              value: {{ .Values.api.wasabi-s3.wasabiServiceUrl | quote }}
+            - name: WASABI_S3_BUCKET
+              value: {{ .Values.api.wasabi-s3.wasabiServiceUrl | quote }}
           imagePullPolicy: {{ .Values.api.image.pullPolicy }}
           ports:
             - name: http
