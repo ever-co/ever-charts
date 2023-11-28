@@ -135,7 +135,11 @@ api:
   # app configurations
   loglevel: "info"  # Set the log level to "info"
 
-  adminPasswordReset: true  # Enable or disable admin password reset feature
+  # Enable or disable admin password reset feature
+  adminPasswordReset: true
+
+  # Allow or disallow users with super admin role
+  allowSuperAdminRole: true
 
   # Sentry configuration for API
   sentry:
@@ -149,18 +153,78 @@ api:
     jwtRefreshTokenSecret: "changeMe"  # Set the refresh token secret, replace "changeMe" with a secure key
     jwtRefreshTokenExpirationTime: "86400"  # Set the expiration time for JWT refresh tokens in seconds (e.g., 86400 seconds = 1 day)
 
+  # API configurations for S3
   s3:
-    awsAccessKeyId: ""
-    awsSecretAccessKey: ""
-    awsRegion: ""
-    awsS3Bucket: ""
+    awsAccessKeyId: ""  # Provide the AWS Access Key ID
+    awsSecretAccessKey: ""  # Provide the AWS Secret Access Key
+    awsRegion: ""  # Specify the AWS region
+    awsS3Bucket: ""  # Specify the AWS S3 bucket name
 
+  # API configurations for Wasabi S3
   wasabi-s3:
-    wasabiAccessKeyId: ""
-    wasabiSecretAccessKey: ""
-    wasabiRegion: ""
-    wasabiServiceUrl:
-    wasabiS3Bucket: ""
+    wasabiAccessKeyId: ""  # Provide the Wasabi Access Key ID
+    wasabiSecretAccessKey: ""  # Provide the Wasabi Secret Access Key
+    wasabiRegion: ""  # Specify the Wasabi region
+    wasabiServiceUrl: ""  # Provide the Wasabi Service URL if applicable
+    wasabiS3Bucket: ""  # Specify the Wasabi S3 bucket name
+  
+  # App configurations for mail
+  mail-config:
+    mailFromAddress: ""  # Set the email address used in the 'From' field
+    mailHost: ""  # Specify the mail server host
+    mailPort: ""  # Specify the mail server port
+    mailUserName: ""  # Provide the username for mail authentication if required
+    mailPassword: ""  # Provide the password for mail authentication if required
+
+  # Google Authentication configurations
+  google-auth:
+    gClientId: ""  # Provide the Google Client ID
+    gClientSecret: ""  # Provide the Google Client Secret
+    gCallbackUrl: ""  # Specify the callback URL for Google authentication
+
+  # Facebook Authentication configurations
+  facebook-auth:
+    fbClientId: ""  # Provide the Facebook Client ID
+    fbClientSecret: ""  # Provide the Facebook Client Secret
+    fbGraphVersion: ""  # Specify the Facebook Graph API version
+    fbCallbackUrl: ""  # Specify the callback URL for Facebook authentication
+
+  # Gauzy AI configurations
+  gauzy-ai:
+    graphqlEndpoint: ""  # Specify the GraphQL endpoint for Gauzy AI
+    restEndpoint: ""  # Specify the REST endpoint for Gauzy AI
+
+  # Unleash feature toggle configurations
+  unleash:
+    unleashAppName: ""  # Specify the Unleash application name
+    unleashApiUrl: ""  # Specify the Unleash API URL
+    unleashInstanceId: ""  # Specify the Unleash instance ID
+    unleashRefreshInterval: ""  # Specify the Unleash refresh interval
+    unleashMatricsInterval: ""  # Specify the Unleash metrics interval
+    unleashApiKey: ""  # Specify the Unleash API key
+    
+  # PM2 configurations
+  pm2:
+    pm2PublicKey: ""  # Provide the PM2 public key
+    pm2SecretKey: ""  # Provide the PM2 secret key
+    pm2MachineName: ""  # Specify the PM2 machine name
+
+  # Jitsu configurations
+  jitsu:
+    serverUrl: ""  # Specify the Jitsu server URL
+    serverWriteKey: ""  # Specify the Jitsu server write key
+
+  # GitHub configurations
+  gitHub:
+    githubClientId: ""  # Provide the GitHub Client ID
+    githubClientSecret: ""  # Provide the GitHub Client Secret
+    githubWebhookUrl: ""  # Specify the GitHub webhook URL
+    githubWebhookSecret: ""  # Specify the GitHub webhook secret
+    githubAppPrivateKey: ""  # Provide the GitHub App private key
+    githubAppId: ""  # Provide the GitHub App ID
+    githubAppName: ""  # Specify the GitHub App name
+    githubCallbackUrl: ""  # Specify the GitHub callback URL
+    githubPostInstallUrl: ""  # Specify the GitHub post-installation URL
 
   podAnnotations: {}
   podLabels: {}
