@@ -49,6 +49,8 @@ spec:
               value: {{ .Values.global.baseUrls.client | quote }}
             - name: ADMIN_PASSWORD_RESET
               value: {{ .Values.api.adminPasswordReset | quote }}
+            - name: ALLOW_SUPER_ADMIN_ROLE
+              value: {{ .Values.api.allowSuperAdminRole | quote }}
             - name: LOG_LEVEL
               value: {{ .Values.api.loglevel | quote }}
             - name: SENTRY_DSN
@@ -85,6 +87,75 @@ spec:
               value: {{ .Values.api.wasabi-s3.wasabiServiceUrl | quote }}
             - name: WASABI_S3_BUCKET
               value: {{ .Values.api.wasabi-s3.wasabiServiceUrl | quote }}
+            - name: MAIL_FROM_ADDRESS
+              value: {{ .Values.api.mail-config.mailFromAddress | quote }}
+            - name: MAIL_HOST
+              value: {{ .Values.api.mail-config.mailHost | quote }}
+            - name: MAIL_PORT
+              value: {{ .Values.api.mail-config.mailPort | quote }}
+            - name: MAIL_USERNAME
+              value: {{ .Values.api.mail-config.mailUserName | quote }}
+            - name: MAIL_PASSWORD
+              value: {{ .Values.api.mail-config.mailPassword | quote }}
+            - name: GOOGLE_CLIENT_ID
+              value: {{ .Values.api.google-auth.gClientId | quote }}
+            - name: GOOGLE_CLIENT_SECRET
+              value: {{ .Values.api.google-auth.gClientSecret | quote }}
+            - name: GOOGLE_CALLBACK_URL
+              value: {{ .Values.api.google-auth.gCallbackUrl | quote }}
+            - name: FACEBOOK_CLIENT_ID
+              value: {{ .Values.api.facebook-auth.fbClientId | quote }}
+            - name: FACEBOOK_CLIENT_SECRET
+              value: {{ .Values.api.facebook-auth.fbClientSecret | quote }}
+            - name: FACEBOOK_GRAPH_VERSION
+              value: {{ .Values.api.facebook-auth.fbGraphVersion | quote }}
+            - name: FACEBOOK_CALLBACK_URL
+              value: {{ .Values.api.facebook-auth.fbCallbackUrl | quote }}
+            - name: GAUZY_AI_GRAPHQL_ENDPOINT
+              value: {{ .Values.api.gauzy-ai.graphqlEndpoint | quote }}
+            - name: GAUZY_AI_REST_ENDPOINT
+              value: {{ .Values.api.gauzy-ai.restEndpoint | quote }}
+            - name: UNLEASH_APP_NAME
+              value: {{ .Values.api.unleash.unleashAppName | quote }}
+            - name: UNLEASH_API_URL
+              value: {{ .Values.api.unleash.unleashApiUrl | quote }}
+            - name: UNLEASH_INSTANCE_ID
+              value: {{ .Values.api.unleash.unleashInstanceId | quote }}
+            - name: UNLEASH_REFRESH_INTERVAL
+              value: {{ .Values.api.unleash.unleashRefreshInterval | quote }}
+            - name: UNLEASH_METRICS_INTERVAL
+              value: {{ .Values.api.unleash.unleashMatricsInterval | quote }}
+            - name: UNLEASH_API_KEY
+              value: {{ .Values.api.unleash.unleashApiKey | quote }}
+            - name: PM2_PUBLIC_KEY
+              value: {{ .Values.api.pm2.pm2PublicKey | quote }}
+            - name: PM2_SECRET_KEY
+              value: {{ .Values.api.pm2.pm2SecretKey | quote }}
+            - name: PM2_MACHINE_NAME
+              value: {{ .Values.api.pm2.pm2MachineName | quote }}
+            - name: JITSU_SERVER_URL
+              value: {{ .Values.api.jitsu.serverUrl | quote }}
+            - name: JITSU_SERVER_WRITE_KEY
+              value: {{ .Values.api.jitsu.serverWriteKey | quote }}
+            - name: GAUZY_GITHUB_CLIENT_ID
+              value: {{ .Values.api.gitHub.githubClientId | quote }}
+            - name: GAUZY_GITHUB_CLIENT_SECRET
+              value: {{ .Values.api.gitHub.githubClientSecret | quote }}
+            - name: GAUZY_GITHUB_WEBHOOK_URL
+              value: {{ .Values.api.gitHub.githubWebhookUrl | quote }}
+            - name: GAUZY_GITHUB_WEBHOOK_SECRET
+              value: {{ .Values.api.gitHub.githubWebhookSecret | quote }}
+            - name: GAUZY_GITHUB_APP_PRIVATE_KEY
+              value: {{ .Values.api.gitHub.githubAppPrivateKey | quote }}
+            - name: GAUZY_GITHUB_APP_ID
+              value: {{ .Values.api.gitHub.githubAppId | quote }}
+            - name: GAUZY_GITHUB_APP_NAME
+              value: {{ .Values.api.gitHub.githubAppName | quote }}
+            - name: GAUZY_GITHUB_CALLBACK_URL
+              value: {{ .Values.api.gitHub.githubCallbackUrl | quote }}
+            - name: GAUZY_GITHUB_POST_INSTALL_URL
+              value: {{ .Values.api.gitHub.githubPostInstallUrl | quote }}
+
           imagePullPolicy: {{ .Values.api.image.pullPolicy }}
           ports:
             - name: http
