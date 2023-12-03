@@ -11,6 +11,9 @@
 
 Helm Charts for [Ever Platform](https://github.com/ever-co).
 
+Content:
+- [Ever Gauzy Helm Chart](https://github.com/ever-co/ever-charts/tree/develop/charts/ever-gauzy) ([README](https://github.com/ever-co/ever-charts/blob/develop/charts/ever-gauzy/README.md))
+
 ## 🔗 Links
 
 - **<https://ever.co>** - get more information about our company products.
