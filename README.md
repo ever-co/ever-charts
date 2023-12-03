@@ -1,25 +1,18 @@
-# Ever Gauzy Helm Charts
+# Ever Helm Charts
 
-[uri_gauzy]: https://gauzy.co
+[uri_gauzy]: https://ever.co
 [uri_license]: https://www.gnu.org/licenses/agpl-3.0.html
 [uri_license_image]: https://img.shields.io/badge/License-AGPL%20v3-blue.svg
 
 ![visitors](https://visitor-badge.laobi.icu/badge?page_id=ever-co.ever-gauzy-charts)
 [![License: AGPL v3][uri_license_image]][uri_license]
 
-## 💡 What's New
-
-We released [Ever Teams](https://github.com/ever-co/ever-teams) platform for Work & Project Management.
-Please check <https://github.com/ever-co/ever-teams> and make it ⭐ on GitHub!
-It's built with a React / ReactNative (Expo) stack and connects to headless [Ever Gauzy Platform APIs](https://api.gauzy.co/swg).
-
 ## 🌟 What is it
 
-Helm Charts for [Ever Gauzy Platform](https://github.com/ever-co/ever-gauzy).
+Helm Charts for [Ever Platform](https://github.com/ever-co).
 
 ## 🔗 Links
 
-- **<https://gauzy.co>** - check more information about the platform at the official website.
 - **<https://ever.co>** - get more information about our company products.
 
 ## 💌 Contact Us
@@ -28,28 +21,39 @@ Helm Charts for [Ever Gauzy Platform](https://github.com/ever-co/ever-gauzy).
 - [Slack Community](https://join.slack.com/t/gauzy/shared_invite/enQtNzc5MTA5MDUwODg2LTI0MGEwYTlmNWFlNzQzMzBlOWExNTk0NzAyY2IwYWYwMzZjMTliYjMwNDI3NTJmYmM4MDQ4NDliMDNiNDY1NWU)
 - [Discord Chat](https://discord.gg/hKQfn4j)
 - [![Join the community on Spectrum](https://withspectrum.github.io/badge/badge.svg)](https://spectrum.chat/gauzy)
-- [![Gitter](https://badges.gitter.im/JoinChat.svg)](https://gitter.im/ever-co/ever-gauzy?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+- [Gitter Chat](https://gitter.im/ever-co/ever)
 - [![Get help on Codementor](https://cdn.codementor.io/badges/get_help_github.svg)](https://www.codementor.io/evereq?utm_source=github&utm_medium=button&utm_term=evereq&utm_campaign=github)
-- For business inquiries: <mailto:gauzy@ever.co>
+- [Telegram](https://t.me/everplatform)
+- For business inquiries: <mailto:ever@ever.co>
 - Please report security vulnerabilities to <mailto:security@ever.co>
-- [Gauzy Platform @ Twitter](https://twitter.com/gauzyplatform)
-- [Gauzy Platform @ Facebook](https://www.facebook.com/gauzyplatform)
+- [Ever Platform @ Twitter](https://twitter.com/everplatform)
+- [Ever Platform @ Facebook](https://www.facebook.com/everplatform)
 
 ## 🔐 Security
 
-Ever® Gauzy™ follows good security practices, but 100% security cannot be guaranteed in any software!
-Ever® Gauzy™ is provided AS IS without any warranty. Use at your own risk!
+Ever® Platform follows good security practices, but 100% security cannot be guaranteed in any software!
+Ever® Platform is provided AS IS without any warranty. Use at your own risk!
 See more details in the [LICENSE](LICENSE.md).
 
 In a production setup, all client-side to server-side (backend, APIs) communications should be encrypted using HTTPS/WSS/SSL (REST APIs, GraphQL endpoint, Socket.io WebSockets, etc.).
 
-If you discover any issue regarding security, please disclose the information responsibly by sending an email to <mailto:security@ever.co> or on  [![huntr](https://cdn.huntr.dev/huntr_security_badge_mono.svg)](https://huntr.dev) and not by creating a GitHub issue.
+If you discover any issue regarding security, please disclose the information responsibly by sending an email to <mailto:security@ever.co> and not by creating a GitHub issue.
 
 ## 🛡️ License
 
-We support the open-source community. If you're building awesome non-profit/open-source projects, we're happy to help and will provide (subject to [acceptance criteria](https://github.com/ever-co/ever-gauzy/wiki/Free-license-and-hosting-for-Non-profit-and-Open-Source-projects)) Ever Gauzy Enterprise edition license and free hosting option! Feel free to contact us at <mailto:ever@ever.co> to make a request. More details are explained in our [Wiki](https://github.com/ever-co/ever-gauzy/wiki/Free-license-and-hosting-for-Non-profit-and-Open-Source-projects).
+We support the open-source community. If you're building awesome non-profit/open-source projects, we're happy to help and will provide (subject to [acceptance criteria](https://github.com/ever-co/ever-gauzy/wiki/Free-license-and-hosting-for-Non-profit-and-Open-Source-projects)) Enterprise edition license and free hosting option! Feel free to contact us at <mailto:ever@ever.co> to make a request. More details are explained in our [Wiki](https://github.com/ever-co/ever-gauzy/wiki/Free-license-and-hosting-for-Non-profit-and-Open-Source-projects).
 
-This software is available under the following licenses:
+Each part of the platform is available under the different licenses. 
+
+### Ever Demand Platform 
+
+-   [Ever® Demand™ Platform Community Edition](https://github.com/ever-co/ever-demand/blob/master/LICENSE.md#ever-platform-community-edition-license)
+-   [Ever® Demand™ Platform Small Business](https://github.com/ever-co/ever-demand/blob/master/LICENSE.md#ever-platform-small-business-license)
+-   [Ever® Demand™ Platform Enterprise](https://github.com/ever-co/ever-demand/blob/master/LICENSE.md#ever-platform-enterprise-license)
+
+#### The default Ever® Demand™ Platform license, without a valid Ever® Demand™ Platform Enterprise or Ever® Demand™ Platform Small Business License agreement, is the Ever® Demand™ Platform Community Edition License.
+
+### Ever Gauzy Platform
 
 - [Ever® Gauzy™ Platform Community Edition](https://github.com/ever-co/ever-gauzy/blob/master/LICENSE.md#gauzy-platform-community-edition-license)
 - [Ever® Gauzy™ Platform Small Business](https://github.com/ever-co/ever-gauzy/blob/master/LICENSE.md#gauzy-platform-small-business-license)
@@ -57,12 +61,20 @@ This software is available under the following licenses:
 
 #### The default Ever® Gauzy™ Platform license, without a valid Ever® Gauzy™ Platform Enterprise or Ever® Gauzy™ Platform Small Business License agreement, is the Ever® Gauzy™ Platform Community Edition License
 
-#### Please see [LICENSE](LICENSE.md) for more information on licenses. You can also [compare our offering](https://ever.co/compare-gauzy/#compare)
+### Ever Teams Platform
+
+-   [Ever® Teams™ Platform Community Edition](https://github.com/ever-co/ever-teams/blob/master/LICENSE.md##ever-teams-platform-community-edition-license)
+-   [Ever® Teams™ Platform Small Business](https://github.com/ever-co/ever-teams/blob/master/LICENSE.md#ever-teams-platform-small-business-license)
+-   [Ever® Teams™ Platform Enterprise](https://github.com/ever-co/ever-teams/blob/master/LICENSE.md#ever-teams-platform-enterprise-license)
+
+#### The default Ever® Teams™ Platform license, without a valid Ever® Teams™ Platform Enterprise or Ever® Teams™ Platform Small Business License agreement, is the Ever® Teams™ Platform Community Edition License
+
+#### Please see [LICENSE](LICENSE.md) for more information on licenses.
 
 ## ™️ Trademarks
 
 **Ever**® is a registered trademark of [Ever Co. LTD](https://ever.co).
-**Ever® Demand™**, **Ever® Gauzy™** and **Ever® OpenSaaS™**  are all trademarks of [Ever Co. LTD](https://ever.co).
+**Ever® Demand™**, **Ever® Gauzy™**,  **Ever® Teams™** and **Ever® OpenSaaS™** are all trademarks of [Ever Co. LTD](https://ever.co).
 
 The trademarks may only be used with the written permission of Ever Co. LTD. and may not be used to promote or otherwise market competitive products or services.
 
@@ -76,14 +88,12 @@ All other brand and product names are trademarks, registered trademarks or servi
 
 ## 💪 Thanks to our Contributors
 
-See our contributors list in [CONTRIBUTORS.md](https://github.com/ever-co/ever-gauzy/blob/develop/.github/CONTRIBUTORS.md).
-You can also view a full list of our [contributors tracked by Github](https://github.com/ever-co/ever-gauzy/graphs/contributors).
+See our contributors lists in each repository under https://github.com/ever-co.
 
 <img src="https://contributors-img.web.app/image?repo=ever-co/ever-gauzy" />
-
-## ⭐ Star History
-
-[![Star History Chart](https://api.star-history.com/svg?repos=ever-co/ever-gauzy&type=Date)](https://star-history.com/#ever-co/ever-gauzy&Date)
+<img src="https://contributors-img.web.app/image?repo=ever-co/ever-demand" />
+<img src="https://contributors-img.web.app/image?repo=ever-co/ever-teams" />
+<img src="https://contributors-img.web.app/image?repo=ever-co/ever-traduora" />
 
 ## ❤️ Powered By
 
@@ -99,5 +109,4 @@ You can also view a full list of our [contributors tracked by Github](https://gi
 
 ## 🔥 P.S
 
-- If you are interested in running an on-demand (delivery) or digital marketplace business, check open-source [Ever Demand Platform](https://github.com/ever-co/ever-demand)
 - [We are Hiring: remote TypeScript / NestJS / Angular developers](https://github.com/ever-co/jobs#available-positions)
