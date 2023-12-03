@@ -13,7 +13,7 @@
 ## TL;DR;
 
 ```console
-helm repo add ever-co https://charts.gauzy.co
+helm repo add ever-co https://charts.ever.co
 helm install ever-co/ever-gauzy
 ```
 
