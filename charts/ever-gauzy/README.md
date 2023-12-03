@@ -13,8 +13,8 @@
 ## TL;DR;
 
 ```console
-helm repo add ever-gauzy https://charts.gauzy.co
-helm install ever-gauzy/ever-gauzy
+helm repo add ever-co https://charts.gauzy.co
+helm install ever-co/ever-gauzy
 ```
 
 ## Introduction
@@ -27,9 +27,9 @@ To install the chart with the release name `my-release`:
 
 ```console
 $ # Helm 2
-helm install --name my-release ever-gauzy/ever-gauzy
+helm install --name my-release ever-co/ever-gauzy
 $ # Helm 3
-helm install my-release ever-gauzy/ever-gauzy
+helm install my-release ever-co/ever-gauzy
 ```
 
 The command deploys ever-gauzy on the Kubernetes cluster in the default configuration. The configuration section lists the parameters that can be configured during installation.
@@ -194,10 +194,10 @@ Specify each parameter using the `--set key=value[,key=value]` argument to `helm
 
 ```console
 $ # Helm 2
-helm install ever-gauzy/ever-gauzy --name my-release \
+helm install ever-co/ever-gauzy --name my-release \
   --set global.env.production=true
 $ # Helm 3
-helm install my-release ever-gauzy/ever-gauzy \
+helm install my-release ever-co/ever-gauzy \
   --set global.env.production=true
 ```
 
@@ -206,10 +206,10 @@ provided while installing the chart. For example:
 
 ```console
 $ # Helm 2
-helm install ever-gauzy/ever-gauzy --name my-release -f values.yaml
+helm install ever-co/ever-gauzy --name my-release -f values.yaml
 $ # Helm 3
-helm install my-release ever-gauzy/ever-gauzy -f values.yaml
+helm install my-release ever-co/ever-gauzy -f values.yaml
 ```
 
-> **Tip**: You can use the default [values.yaml](https://github.com/ever-co/ever-gauzy-charts/blob/develop/charts/ever-gauzy/values.yaml) and look on [examples](https://github.com/ever-co/ever-gauzy-charts/tree/develop/charts/ever-gauzy/examples).
+> **Tip**: You can use the default [values.yaml](https://github.com/ever-co/ever-gauzy-charts/blob/develop/charts/ever-co/values.yaml) and look on [examples](https://github.com/ever-co/ever-gauzy-charts/tree/develop/charts/ever-co/examples).
 
