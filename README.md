@@ -72,6 +72,10 @@ Each part of the platform is available under the different licenses.
 
 #### The default Ever® Teams™ Platform license, without a valid Ever® Teams™ Platform Enterprise or Ever® Teams™ Platform Small Business License agreement, is the Ever® Teams™ Platform Community Edition License
 
+### Ever Traduora Platform 
+
+- [GNU Affero General Public License v3.0](https://github.com/ever-co/ever-traduora/blob/develop/LICENSE)
+
 #### Please see [LICENSE](LICENSE.md) for more information on licenses.
 
 ## ™️ Trademarks
@@ -93,9 +97,19 @@ All other brand and product names are trademarks, registered trademarks or servi
 
 See our contributors lists in each repository under https://github.com/ever-co.
 
+### Ever Gauzy
 <img src="https://contributors-img.web.app/image?repo=ever-co/ever-gauzy" />
+
+### Ever Demand
+
 <img src="https://contributors-img.web.app/image?repo=ever-co/ever-demand" />
+
+### Ever Teams
+
 <img src="https://contributors-img.web.app/image?repo=ever-co/ever-teams" />
+
+### Ever Traduora
+
 <img src="https://contributors-img.web.app/image?repo=ever-co/ever-traduora" />
 
 ## ❤️ Powered By
