@@ -7,6 +7,7 @@
 ![visitors](https://visitor-badge.laobi.icu/badge?page_id=ever-co.ever-gauzy-charts)
 [![License: AGPL v3][uri_license_image]][uri_license]
 
+
 ## 🌟 What is it
 
 Helm Charts for [Ever Platform](https://github.com/ever-co).
