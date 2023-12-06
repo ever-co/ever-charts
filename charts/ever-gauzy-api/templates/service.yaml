@@ -1,9 +1,9 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: {{ include "gauzy-api.fullname" . }}
+  name: {{ include "ever-gauzy-api.fullname" . }}
   labels:
-    {{- include "gauzy-api.labels" . | nindent 4 }}
+    {{- include "ever-gauzy-api.labels" . | nindent 4 }}
 spec:
   type: {{ .Values.service.type }}
   ports:
@@ -12,4 +12,4 @@ spec:
       protocol: TCP
       name: http
   selector:
-    {{- include "gauzy-api.selectorLabels" . | nindent 4 }}
+    {{- include "ever-gauzy-api.selectorLabels" . | nindent 4 }}

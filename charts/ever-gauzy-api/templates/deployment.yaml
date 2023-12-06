@@ -1,14 +1,14 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ include "gauzy-api.fullname" . }}
+  name: {{ include "ever-gauzy-api.fullname" . }}
   labels:
-    {{- include "gauzy-api.labels" . | nindent 4 }}
+    {{- include "ever-gauzy-api.labels" . | nindent 4 }}
 spec:
   replicas: {{ .Values.replicaCount }}
   selector:
     matchLabels:
-      {{- include "gauzy-api.selectorLabels" . | nindent 6 }}
+      {{- include "ever-gauzy-api.selectorLabels" . | nindent 6 }}
   template:
     metadata:
       {{- with .Values.podAnnotations }}
@@ -16,7 +16,7 @@ spec:
         {{- toYaml . | nindent 8 }}
       {{- end }}
       labels:
-        {{- include "gauzy-api.labels" . | nindent 8 }}
+        {{- include "ever-gauzy-api.labels" . | nindent 8 }}
 	{{- with .Values.podLabels }}
         {{- toYaml . | nindent 8 }}
         {{- end }}
@@ -25,7 +25,7 @@ spec:
       imagePullSecrets:
         {{- toYaml . | nindent 8 }}
       {{- end }}
-      serviceAccountName: {{ include "gauzy-api.serviceAccountName" . }}
+      serviceAccountName: {{ include "ever-gauzy-api.serviceAccountName" . }}
       securityContext:
         {{- toYaml .Values.podSecurityContext | nindent 8 }}
       containers:
@@ -38,11 +38,11 @@ spec:
             {{- . | toYaml | trim | nindent 12 }}
             {{- end }}
             - name: DEMO
-              value: {{ include "gauzy-api.demoenv" . | quote }}
+              value: {{ include "ever-gauzy-api.demoenv" . | quote }}
             - name: API_HOST
               value: 0.0.0.0
             - name: NODE_ENV
-              value: {{ include "gauzy-api.nodeenv" . | quote }}
+              value: {{ include "ever-gauzy-api.nodeenv" . | quote }}
             - name: API_BASE_URL
               value: {{ .Values.global.baseUrls.api | quote }}
             - name: CLIENT_BASE_URL
