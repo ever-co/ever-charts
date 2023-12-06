@@ -1,6 +1,6 @@
 ###### based on [Ever-Gauzy](https://github.com/ever-co/ever-gauzy)
 
-# Ever-Gauzy-API
+# Ever-Gauzy-Api
 
 [Ever-Gauzy](https://github.com/ever-co/ever-gauzy)  An Open Business Management Platform for Collaborative, On-Demand and Sharing Economies.
 
@@ -14,7 +14,7 @@
 
 ```console
 helm repo add ever-co https://charts.ever.co
-helm install ever-co/gauzy-api
+helm install ever-co/ever-gauzy-api
 ```
 
 ## Introduction
@@ -27,9 +27,9 @@ To install the chart with the release name `my-release`:
 
 ```console
 $ # Helm 2
-helm install --name my-release ever-co/gauzy-api
+helm install --name my-release ever-co/ever-gauzy-api
 $ # Helm 3
-helm install my-release ever-co/gauzy-api
+helm install my-release ever-co/ever-gauzy-api
 ```
 
 The command deploys ever-gauzy on the Kubernetes cluster in the default configuration. The configuration section lists the parameters that can be configured during installation.
@@ -54,7 +54,7 @@ The command removes nearly all the Kubernetes components associated with the cha
 | `global.baseUrls.api` | The base URL for the API | `""` |
 | `global.baseUrls.client` | The base URL for the client | `""` |
 | `replicaCount` | Number of ever-gauzy API replicas | `1` |
-| `image.repository` | Repository for API image | `ghcr.io/ever-co/gauzy-api-demo` |
+| `image.repository` | Repository for API image | `ghcr.io/ever-co/ever-gauzy-api-demo` |
 | `image.pullPolicy` | Image pull policy | `IfNotPresent` |
 | `image.tag` | Image tag | `"latest"` |
 | `imagePullSecrets` | List of Docker registry secret names | `[]` |
@@ -152,10 +152,10 @@ Specify each parameter using the `--set key=value[,key=value]` argument to `helm
 
 ```console
 $ # Helm 2
-helm install ever-co/gauzy-api --name my-release \
+helm install ever-co/ever-gauzy-api --name my-release \
   --set global.env.production=true
 $ # Helm 3
-helm install my-release ever-co/gauzy-api \
+helm install my-release ever-co/ever-gauzy-api \
   --set global.env.production=true
 ```
 
@@ -164,10 +164,10 @@ provided while installing the chart. For example:
 
 ```console
 $ # Helm 2
-helm install ever-co/gauzy-api --name my-release -f values.yaml
+helm install ever-co/ever-gauzy-api --name my-release -f values.yaml
 $ # Helm 3
-helm install my-release ever-co/gauzy-api -f values.yaml
+helm install my-release ever-co/ever-gauzy-api -f values.yaml
 ```
 
-> **Tip**: You can use the default [values.yaml](https://github.com/ever-co/ever-charts/blob/develop/charts/gauzy-api/values.yaml) and look on [examples](https://github.com/ever-co/ever-charts/tree/develop/charts/gauzy-api/examples).
+> **Tip**: You can use the default [values.yaml](https://github.com/ever-co/ever-charts/blob/develop/charts/ever-gauzy-api/values.yaml) and look on [examples](https://github.com/ever-co/ever-charts/tree/develop/charts/ever-gauzy-api/examples).
 
