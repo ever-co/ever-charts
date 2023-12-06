@@ -94,28 +94,4 @@ entries:
     urls:
     - ever-gauzy-api-0.1.0.tgz
     version: 0.1.0
-  gauzy-api:
-  - apiVersion: v2
-    appVersion: 1.16.0
-    created: "2023-12-06T21:36:47.84371755Z"
-    dependencies:
-    - condition: global.env.production
-      name: postgresql
-      repository: https://charts.bitnami.com/bitnami
-      version: 13.2.9
-    description: A Helm chart for Ever Gauzy Platform
-    digest: fb68d2b8dac43a5bb58811d4b42e6de085a27be50939b5e1b72270574797e2ed
-    home: https://gauzy.co
-    keywords:
-    - gauzy-api
-    maintainers:
-    - email: ever@ever.co
-      name: Ever Co. LTD
-    name: gauzy-api
-    sources:
-    - https://github.com/ever-co/ever-gauzy-charts
-    type: application
-    urls:
-    - gauzy-api-0.1.0.tgz
-    version: 0.1.0
 generated: "2023-12-06T21:36:47.820455701Z"
