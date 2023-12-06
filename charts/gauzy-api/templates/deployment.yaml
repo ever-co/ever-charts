@@ -1,0 +1,174 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "gauzy-api.fullname" . }}
+  labels:
+    {{- include "gauzy-api.labels" . | nindent 4 }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      {{- include "gauzy-api.selectorLabels" . | nindent 6 }}
+  template:
+    metadata:
+      {{- with .Values.podAnnotations }}
+      annotations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      labels:
+        {{- include "gauzy-api.labels" . | nindent 8 }}
+	{{- with .Values.podLabels }}
+        {{- toYaml . | nindent 8 }}
+        {{- end }}
+    spec:
+      {{- with .Values.imagePullSecrets }}
+      imagePullSecrets:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      serviceAccountName: {{ include "gauzy-api.serviceAccountName" . }}
+      securityContext:
+        {{- toYaml .Values.podSecurityContext | nindent 8 }}
+      containers:
+        - name: {{ .Chart.Name }}
+          securityContext:
+            {{- toYaml .Values.securityContext | nindent 12 }}
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
+          env:
+            {{- with .Values.envs }}
+            {{- . | toYaml | trim | nindent 12 }}
+            {{- end }}
+            - name: DEMO
+              value: {{ include "gauzy-api.demoenv" . | quote }}
+            - name: API_HOST
+              value: 0.0.0.0
+            - name: NODE_ENV
+              value: {{ include "gauzy-api.nodeenv" . | quote }}
+            - name: API_BASE_URL
+              value: {{ .Values.global.baseUrls.api | quote }}
+            - name: CLIENT_BASE_URL
+              value: {{ .Values.global.baseUrls.client | quote }}
+            - name: ADMIN_PASSWORD_RESET
+              value: {{ .Values.adminPasswordReset | quote }}
+            - name: ALLOW_SUPER_ADMIN_ROLE
+              value: {{ .Values.allowSuperAdminRole | quote }}
+            - name: LOG_LEVEL
+              value: {{ .Values.loglevel | quote }}
+            - name: SENTRY_DSN
+              value: {{ .Values.sentry.sentryDsn | quote }}
+            - name: SENTRY_HTTP_TRACING_ENABLED
+              value: {{ .Values.sentry.sentryHttpTracingEnabled | quote }}
+            - name: SENTRY_POSTGRES_TRACKING_ENABLED
+              value: {{ .Values.sentry.sentryPostgresTrackingEnabled | quote }}
+            - name: DB_HOST
+              value: "{{ .Release.Name }}-postgresql"
+            - name: DB_USER
+              value: {{ .Values.postgresql.global.postgresql.auth.username | quote }}
+            - name: DB_PASS
+              value: {{ .Values.postgresql.global.postgresql.auth.password | quote }}
+            - name: DB_NAME
+              value: {{ .Values.postgresql.global.postgresql.auth.database | quote }}
+            - name: DB_PORT
+              value: {{ include "postgresql.servicePort" .Values.postgresql.global.postgresql.service.ports.postgresql | quote }}
+            - name: AWS_ACCESS_KEY_ID
+              value: {{ .Values.s3.awsAccessKeyId | quote }}
+            - name: AWS_SECRET_ACCESS_KEY
+              value: {{ .Values.s3.awsSecretAccessKey | quote }}
+            - name: AWS_REGION
+              value: {{ .Values.s3.awsRegion | quote }}
+            - name: AWS_S3_BUCKET
+              value: {{ .Values.s3.awsS3Bucket | quote }}
+            - name: WASABI_ACCESS_KEY_ID
+              value: {{ .Values.wasabiS3.wasabiAccessKeyId | quote }}
+            - name: WASABI_SECRET_ACCESS_KEY
+              value: {{ .Values.wasabiS3.wasabiSecretAccessKey | quote }}
+            - name: WASABI_REGION
+              value: {{ .Values.wasabiS3.wasabiRegion | quote }}
+            - name: WASABI_SERVICE_URL
+              value: {{ .Values.wasabiS3.wasabiServiceUrl | quote }}
+            - name: WASABI_S3_BUCKET
+              value: {{ .Values.wasabiS3.wasabiServiceUrl | quote }}
+            - name: MAIL_FROM_ADDRESS
+              value: {{ .Values.mailConfig.mailFromAddress | quote }}
+            - name: MAIL_HOST
+              value: {{ .Values.mailConfig.mailHost | quote }}
+            - name: MAIL_PORT
+              value: {{ .Values.mailConfig.mailPort | quote }}
+            - name: MAIL_USERNAME
+              value: {{ .Values.mailConfig.mailUserName | quote }}
+            - name: MAIL_PASSWORD
+              value: {{ .Values.mailConfig.mailPassword | quote }}
+            - name: GOOGLE_CLIENT_ID
+              value: {{ .Values.googleAuth.gClientId | quote }}
+            - name: GOOGLE_CLIENT_SECRET
+              value: {{ .Values.googleAuth.gClientSecret | quote }}
+            - name: GOOGLE_CALLBACK_URL
+              value: {{ .Values.googleAuth.gCallbackUrl | quote }}
+            - name: FACEBOOK_CLIENT_ID
+              value: {{ .Values.facebookAuth.fbClientId | quote }}
+            - name: FACEBOOK_CLIENT_SECRET
+              value: {{ .Values.facebookAuth.fbClientSecret | quote }}
+            - name: FACEBOOK_GRAPH_VERSION
+              value: {{ .Values.facebookAuth.fbGraphVersion | quote }}
+            - name: FACEBOOK_CALLBACK_URL
+              value: {{ .Values.facebookAuth.fbCallbackUrl | quote }}
+            - name: GAUZY_AI_GRAPHQL_ENDPOINT
+              value: {{ .Values.gauzyAi.graphqlEndpoint | quote }}
+            - name: GAUZY_AI_REST_ENDPOINT
+              value: {{ .Values.gauzyAi.restEndpoint | quote }}
+            - name: UNLEASH_APP_NAME
+              value: {{ .Values.unleash.unleashAppName | quote }}
+            - name: UNLEASH_API_URL
+              value: {{ .Values.unleash.unleashApiUrl | quote }}
+            - name: UNLEASH_INSTANCE_ID
+              value: {{ .Values.unleash.unleashInstanceId | quote }}
+            - name: UNLEASH_REFRESH_INTERVAL
+              value: {{ .Values.unleash.unleashRefreshInterval | quote }}
+            - name: UNLEASH_METRICS_INTERVAL
+              value: {{ .Values.unleash.unleashMatricsInterval | quote }}
+            - name: UNLEASH_API_KEY
+              value: {{ .Values.unleash.unleashApiKey | quote }}
+            - name: PM2_PUBLIC_KEY
+              value: {{ .Values.pm2.pm2PublicKey | quote }}
+            - name: PM2_SECRET_KEY
+              value: {{ .Values.pm2.pm2SecretKey | quote }}
+            - name: PM2_MACHINE_NAME
+              value: {{ .Values.pm2.pm2MachineName | quote }}
+            - name: JITSU_SERVER_URL
+              value: {{ .Values.jitsu.serverUrl | quote }}
+            - name: JITSU_SERVER_WRITE_KEY
+              value: {{ .Values.jitsu.serverWriteKey | quote }}
+            - name: GAUZY_GITHUB_CLIENT_ID
+              value: {{ .Values.gitHub.githubClientId | quote }}
+            - name: GAUZY_GITHUB_CLIENT_SECRET
+              value: {{ .Values.gitHub.githubClientSecret | quote }}
+            - name: GAUZY_GITHUB_WEBHOOK_URL
+              value: {{ .Values.gitHub.githubWebhookUrl | quote }}
+            - name: GAUZY_GITHUB_WEBHOOK_SECRET
+              value: {{ .Values.gitHub.githubWebhookSecret | quote }}
+            - name: GAUZY_GITHUB_APP_PRIVATE_KEY
+              value: {{ .Values.gitHub.githubAppPrivateKey | quote }}
+            - name: GAUZY_GITHUB_APP_ID
+              value: {{ .Values.gitHub.githubAppId | quote }}
+            - name: GAUZY_GITHUB_APP_NAME
+              value: {{ .Values.gitHub.githubAppName | quote }}
+            - name: GAUZY_GITHUB_CALLBACK_URL
+              value: {{ .Values.gitHub.githubCallbackUrl | quote }}
+            - name: GAUZY_GITHUB_POST_INSTALL_URL
+              value: {{ .Values.gitHub.githubPostInstallUrl | quote }}
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          ports:
+            - name: http
+              containerPort: {{ .Values.service.targetPort }}
+              protocol: TCP
+          resources:
+            {{- toYaml .Values.resources | nindent 12 }}
+      nodeSelector:
+        {{- toYaml . | nindent 8 }}
+      {{- with .Values.affinity }}
+      affinity:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.tolerations }}
+      tolerations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}

@@ -78,43 +78,43 @@ spec:
             - name: AWS_S3_BUCKET
               value: {{ .Values.api.s3.awsS3Bucket | quote }}
             - name: WASABI_ACCESS_KEY_ID
-              value: {{ .Values.api.wasabi-s3.wasabiAccessKeyId | quote }}
+              value: {{ .Values.api.wasabiS3.wasabiAccessKeyId | quote }}
             - name: WASABI_SECRET_ACCESS_KEY
-              value: {{ .Values.api.wasabi-s3.wasabiSecretAccessKey | quote }}
+              value: {{ .Values.api.wasabiS3.wasabiSecretAccessKey | quote }}
             - name: WASABI_REGION
-              value: {{ .Values.api.wasabi-s3.wasabiRegion | quote }}
+              value: {{ .Values.api.wasabiS3.wasabiRegion | quote }}
             - name: WASABI_SERVICE_URL
-              value: {{ .Values.api.wasabi-s3.wasabiServiceUrl | quote }}
+              value: {{ .Values.api.wasabiS3.wasabiServiceUrl | quote }}
             - name: WASABI_S3_BUCKET
-              value: {{ .Values.api.wasabi-s3.wasabiServiceUrl | quote }}
+              value: {{ .Values.api.wasabiS3.wasabiServiceUrl | quote }}
             - name: MAIL_FROM_ADDRESS
-              value: {{ .Values.api.mail-config.mailFromAddress | quote }}
+              value: {{ .Values.api.mailConfig.mailFromAddress | quote }}
             - name: MAIL_HOST
-              value: {{ .Values.api.mail-config.mailHost | quote }}
+              value: {{ .Values.api.mailConfig.mailHost | quote }}
             - name: MAIL_PORT
-              value: {{ .Values.api.mail-config.mailPort | quote }}
+              value: {{ .Values.api.mailConfig.mailPort | quote }}
             - name: MAIL_USERNAME
-              value: {{ .Values.api.mail-config.mailUserName | quote }}
+              value: {{ .Values.api.mailConfig.mailUserName | quote }}
             - name: MAIL_PASSWORD
-              value: {{ .Values.api.mail-config.mailPassword | quote }}
+              value: {{ .Values.api.mailConfig.mailPassword | quote }}
             - name: GOOGLE_CLIENT_ID
-              value: {{ .Values.api.google-auth.gClientId | quote }}
+              value: {{ .Values.api.googleAuth.gClientId | quote }}
             - name: GOOGLE_CLIENT_SECRET
-              value: {{ .Values.api.google-auth.gClientSecret | quote }}
+              value: {{ .Values.api.googleAuth.gClientSecret | quote }}
             - name: GOOGLE_CALLBACK_URL
-              value: {{ .Values.api.google-auth.gCallbackUrl | quote }}
+              value: {{ .Values.api.googleAuth.gCallbackUrl | quote }}
             - name: FACEBOOK_CLIENT_ID
-              value: {{ .Values.api.facebook-auth.fbClientId | quote }}
+              value: {{ .Values.api.facebookAuth.fbClientId | quote }}
             - name: FACEBOOK_CLIENT_SECRET
-              value: {{ .Values.api.facebook-auth.fbClientSecret | quote }}
+              value: {{ .Values.api.facebookAuth.fbClientSecret | quote }}
             - name: FACEBOOK_GRAPH_VERSION
-              value: {{ .Values.api.facebook-auth.fbGraphVersion | quote }}
+              value: {{ .Values.api.facebookAuth.fbGraphVersion | quote }}
             - name: FACEBOOK_CALLBACK_URL
-              value: {{ .Values.api.facebook-auth.fbCallbackUrl | quote }}
+              value: {{ .Values.api.facebookAuth.fbCallbackUrl | quote }}
             - name: GAUZY_AI_GRAPHQL_ENDPOINT
-              value: {{ .Values.api.gauzy-ai.graphqlEndpoint | quote }}
+              value: {{ .Values.api.gauzyAi.graphqlEndpoint | quote }}
             - name: GAUZY_AI_REST_ENDPOINT
-              value: {{ .Values.api.gauzy-ai.restEndpoint | quote }}
+              value: {{ .Values.api.gauzyAi.restEndpoint | quote }}
             - name: UNLEASH_APP_NAME
               value: {{ .Values.api.unleash.unleashAppName | quote }}
             - name: UNLEASH_API_URL

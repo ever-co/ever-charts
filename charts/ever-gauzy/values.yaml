@@ -161,7 +161,7 @@ api:
     awsS3Bucket: ""  # Specify the AWS S3 bucket name
 
   # API configurations for Wasabi S3
-  wasabi-s3:
+  wasabiS3:
     wasabiAccessKeyId: ""  # Provide the Wasabi Access Key ID
     wasabiSecretAccessKey: ""  # Provide the Wasabi Secret Access Key
     wasabiRegion: ""  # Specify the Wasabi region
@@ -169,7 +169,7 @@ api:
     wasabiS3Bucket: ""  # Specify the Wasabi S3 bucket name
   
   # App configurations for mail
-  mail-config:
+  mailConfig:
     mailFromAddress: ""  # Set the email address used in the 'From' field
     mailHost: ""  # Specify the mail server host
     mailPort: ""  # Specify the mail server port
@@ -177,20 +177,20 @@ api:
     mailPassword: ""  # Provide the password for mail authentication if required
 
   # Google Authentication configurations
-  google-auth:
+  googleAuth:
     gClientId: ""  # Provide the Google Client ID
     gClientSecret: ""  # Provide the Google Client Secret
     gCallbackUrl: ""  # Specify the callback URL for Google authentication
 
   # Facebook Authentication configurations
-  facebook-auth:
+  facebookAuth:
     fbClientId: ""  # Provide the Facebook Client ID
     fbClientSecret: ""  # Provide the Facebook Client Secret
     fbGraphVersion: ""  # Specify the Facebook Graph API version
     fbCallbackUrl: ""  # Specify the callback URL for Facebook authentication
 
   # Gauzy AI configurations
-  gauzy-ai:
+  gauzyAi:
     graphqlEndpoint: ""  # Specify the GraphQL endpoint for Gauzy AI
     restEndpoint: ""  # Specify the REST endpoint for Gauzy AI
 

@@ -13,7 +13,7 @@
 ## TL;DR;
 
 ```console
-helm repo add ever-co https://charts.gauzy.co
+helm repo add ever-co https://charts.ever.co
 helm install ever-co/ever-gauzy
 ```
 
@@ -120,25 +120,25 @@ The command removes nearly all the Kubernetes components associated with the cha
 | `api.s3.awsSecretAccessKey` | AWS Secret Access Key for S3 | `""` |
 | `api.s3.awsRegion` | AWS region for S3 | `""` |
 | `api.s3.awsS3Bucket` | AWS S3 bucket name | `""` |
-| `api.wasabi-s3.wasabiAccessKeyId` | Wasabi Access Key ID | `""` |
-| `api.wasabi-s3.wasabiSecretAccessKey` | Wasabi Secret Access Key | `""` |
-| `api.wasabi-s3.wasabiRegion` | Wasabi region | `""` |
-| `api.wasabi-s3.wasabiServiceUrl` | Wasabi Service URL | `""` |
-| `api.wasabi-s3.wasabiS3Bucket` | Wasabi S3 bucket name | `""` |
-| `api.mail-config.mailFromAddress` | Email address used in the 'From' field | `""` |
-| `api.mail-config.mailHost` | Mail server host | `""` |
-| `api.mail-config.mailPort` | Mail server port | `""` |
-| `api.mail-config.mailUserName` | Username for mail authentication | `""` |
-| `api.mail-config.mailPassword` | Password for mail authentication | `""` |
-| `api.google-auth.gClientId` | Google Client ID | `""` |
-| `api.google-auth.gClientSecret` | Google Client Secret | `""` |
-| `api.google-auth.gCallbackUrl` | Callback URL for Google authentication | `""` |
-| `api.facebook-auth.fbClientId` | Facebook Client ID | `""` |
-| `api.facebook-auth.fbClientSecret` | Facebook Client Secret | `""` |
-| `api.facebook-auth.fbGraphVersion` | Facebook Graph API version | `""` |
-| `api.facebook-auth.fbCallbackUrl` | Callback URL for Facebook authentication | `""` |
-| `api.gauzy-ai.graphqlEndpoint` | GraphQL endpoint for Gauzy AI | `""` |
-| `api.gauzy-ai.restEndpoint` | REST endpoint for Gauzy AI | `""` |
+| `api.wasabiS3.wasabiAccessKeyId` | Wasabi Access Key ID | `""` |
+| `api.wasabiS3.wasabiSecretAccessKey` | Wasabi Secret Access Key | `""` |
+| `api.wasabiS3.wasabiRegion` | Wasabi region | `""` |
+| `api.wasabiS3.wasabiServiceUrl` | Wasabi Service URL | `""` |
+| `api.wasabiS3.wasabiS3Bucket` | Wasabi S3 bucket name | `""` |
+| `api.mailConfig.mailFromAddress` | Email address used in the 'From' field | `""` |
+| `api.mailConfig.mailHost` | Mail server host | `""` |
+| `api.mailConfig.mailPort` | Mail server port | `""` |
+| `api.mailConfig.mailUserName` | Username for mail authentication | `""` |
+| `api.mailConfig.mailPassword` | Password for mail authentication | `""` |
+| `api.googleAuth.gClientId` | Google Client ID | `""` |
+| `api.googleAuth.gClientSecret` | Google Client Secret | `""` |
+| `api.googleAuth.gCallbackUrl` | Callback URL for Google authentication | `""` |
+| `api.facebookAuth.fbClientId` | Facebook Client ID | `""` |
+| `api.facebookAuth.fbClientSecret` | Facebook Client Secret | `""` |
+| `api.facebookAuth.fbGraphVersion` | Facebook Graph API version | `""` |
+| `api.facebookAuth.fbCallbackUrl` | Callback URL for Facebook authentication | `""` |
+| `api.gauzyAi.graphqlEndpoint` | GraphQL endpoint for Gauzy AI | `""` |
+| `api.gauzyAi.restEndpoint` | REST endpoint for Gauzy AI | `""` |
 | `api.unleash.unleashAppName` | Unleash application name | `""` |
 | `api.unleash.unleashApiUrl` | Unleash API URL | `""` |
 | `api.unleash.unleashInstanceId` | Unleash instance ID | `""` |
@@ -175,9 +175,9 @@ The command removes nearly all the Kubernetes components associated with the cha
 | `api.nodeSelector` | Node labels for pod assignment | `{}` |
 | `api.tolerations` | Toleration labels for pod assignment | `[]` |
 | `api.affinity` | Affinity settings for pod assignment | `{}` |
-| `global.imageRegistry` | Global Docker image registry | `""` |
-| `global.imagePullSecrets` | Global Docker registry secret names as an array | `[]` |
-| `global.storageClass` | Global StorageClass for Persistent Volume(s) | `""` |
+| `postgresql.global.imageRegistry` | Global Docker image registry | `""` |
+| `postgresql.global.imagePullSecrets` | Global Docker registry secret names as an array | `[]` |
+| `postgresql.global.storageClass` | Global StorageClass for Persistent Volume(s) | `""` |
 | `postgresql.auth.postgresPassword` | Password for the "postgres" admin user | `""` |
 | `postgresql.auth.username` | Name for a custom user to create | `""` |
 | `postgresql.auth.password` | Password for the custom user to create | `""` |
