@@ -2,7 +2,7 @@
 
 # Ever Gauzy API
 
-[Ever-Gauzy](https://github.com/ever-co/ever-gauzy) - Open Business Management Platform for Collaborative, On-Demand and Sharing Economies.
+[Ever Gauzy](https://github.com/ever-co/ever-gauzy) - Open Business Management Platform for Collaborative, On-Demand and Sharing Economies.
 
 - Enterprise Resource Planning (ERP) software.
 - Customer Relationship Management (CRM) software.
