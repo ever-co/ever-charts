@@ -3,14 +3,14 @@ entries:
   ever-gauzy:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2023-12-03T19:48:11.121996516Z"
+    created: "2023-12-06T16:03:36.683025335Z"
     dependencies:
     - condition: global.env.production
       name: postgresql
       repository: https://charts.bitnami.com/bitnami
       version: 13.2.9
     description: A Helm chart for Ever Gauzy Platform
-    digest: aa41dd56d6d295be3e1d8603b7ba5e02f2aef430800f315137723a3b346f0beb
+    digest: dba9eb9705ea0fc4a7b1a64636ebc55966a4042f842899b882a89a5f6c4a0963
     home: https://gauzy.co
     keywords:
     - ever-gauzy
@@ -26,7 +26,7 @@ entries:
     version: 0.1.6
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2023-12-03T19:48:11.11751184Z"
+    created: "2023-12-06T16:03:36.677044577Z"
     dependencies:
     - condition: global.env.production
       name: postgresql
@@ -49,7 +49,7 @@ entries:
     version: 0.1.5
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2023-12-03T19:48:11.112246569Z"
+    created: "2023-12-06T16:03:36.672042492Z"
     dependencies:
     - condition: global.env.production
       name: postgresql
@@ -70,4 +70,28 @@ entries:
     urls:
     - ever-gauzy-0.1.4.tgz
     version: 0.1.4
-generated: "2023-12-03T19:48:11.107730655Z"
+  gauzy-api:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2023-12-06T16:03:36.687633878Z"
+    dependencies:
+    - condition: global.env.production
+      name: postgresql
+      repository: https://charts.bitnami.com/bitnami
+      version: 13.2.9
+    description: A Helm chart for Ever Gauzy Platform
+    digest: fb68d2b8dac43a5bb58811d4b42e6de085a27be50939b5e1b72270574797e2ed
+    home: https://gauzy.co
+    keywords:
+    - gauzy-api
+    maintainers:
+    - email: ever@ever.co
+      name: Ever Co. LTD
+    name: gauzy-api
+    sources:
+    - https://github.com/ever-co/ever-gauzy-charts
+    type: application
+    urls:
+    - gauzy-api-0.1.0.tgz
+    version: 0.1.0
+generated: "2023-12-06T16:03:36.667242099Z"
