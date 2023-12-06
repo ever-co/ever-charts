@@ -1,11 +1,11 @@
 apiVersion: v2
-name: gauzy-api
+name: ever-gauzy-api
 description: A Helm chart for Ever Gauzy Platform
 type: application
 version: 0.1.0
 appVersion: "1.16.0"
 keywords:
-  - "gauzy-api"
+  - "ever-gauzy-api"
 dependencies:
   - name: postgresql
     condition: global.env.production
