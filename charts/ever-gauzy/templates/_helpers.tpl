@@ -57,86 +57,19 @@ Create the name of the service account to use
 {{- end }}
 {{- end }}
 {{/*
-Expand the name of the chart.
-*/}}
-{{- define "api.name" -}}
-{{- printf "%s-%s" .Chart.Name "api" | replace "+" "_" | trunc 63 | trimSuffix "-" }}
-{{- end }}
-{{/*
-Create a default fully qualified app name.
-We truncate at 63 chars because some Kubernetes name fields are limited to this (by the DNS naming spec).
-If release name contains chart name it will be used as a full name.
-*/}}
-{{- define "api.fullname" -}}
-{{- if .Values.api.fullnameOverride }}
-{{- .Values.api.fullnameOverride | trunc 63 | trimSuffix "-" }}
-{{- else }}
-{{- $name := default .Chart.Name .Values.api.nameOverride }}
-{{- if contains $name .Release.Name }}
-{{- .Release.Name | trunc 63 | trimSuffix "-" }}
-{{- else }}
-{{- printf "%s-%s-%s" .Release.Name $name "api" | trunc 63 | trimSuffix "-" }}
-{{- end }}
-{{- end }}
-{{- end }}
-{{/*
-Create chart name and version as used by the chart label.
-*/}}
-{{- define "api.chart" -}}
-{{- printf "%s-%s" .Chart.Name .Chart.Version | replace "+" "_" | trunc 63 | trimSuffix "-" }}
-{{- end }}
-{{/*
-Common labels
-*/}}
-{{- define "api.labels" -}}
-helm.sh/chart: {{ include "api.chart" . }}
-{{ include "api.selectorLabels" . }}
-{{- if .Chart.AppVersion }}
-app.kubernetes.io/version: {{ .Chart.AppVersion | quote }}
-{{- end }}
-app.kubernetes.io/managed-by: {{ .Release.Service }}
-{{- end }}
-{{/*
-Selector labels
-*/}}
-{{- define "api.selectorLabels" -}}
-app.kubernetes.io/name: {{ include "api.name" . }}
-app.kubernetes.io/instance: {{ .Release.Name }}
-{{- end }}
-{{/*
-Create the name of the service account to use
-*/}}
-{{- define "api.serviceAccountName" -}}
-{{- if .Values.api.serviceAccount.create }}
-{{- default (include "api.fullname" .) .Values.api.serviceAccount.name }}
-{{- else }}
-{{- default "default" .Values.api.serviceAccount.name }}
-{{- end }}
-{{- end }}
-{{/*
 Create a variable based on demo env
 */}}
 {{- define "ever-gauzy.demoenv" -}}
-{{- if not .Values.global.env.demo -}}
+{{- if not .Values.webapp.env.demo -}}
 true
 {{- else -}}
 false
 {{- end -}}
 {{- end -}}
 {{- define "ever-gauzy.nodeenv" -}}
-{{- if not .Values.global.env.demo -}}
+{{- if not .Values.webapp.env.demo -}}
 development
 {{- else -}}
 production
-{{- end -}}
-{{- end -}}
-{{/*
-Set postgresql port
-*/}}
-{{- define "postgresql.servicePort" -}}
-{{- if eq . "" -}}
-  {{- printf "5432" -}}
-{{- else -}}
-  {{- printf . -}}
 {{- end -}}
 {{- end -}}

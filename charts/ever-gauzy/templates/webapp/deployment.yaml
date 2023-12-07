@@ -40,9 +40,9 @@ spec:
             - name: DEMO
               value: {{ include "ever-gauzy.demoenv" . | quote }}
             - name: API_BASE_URL
-              value: {{ .Values.global.baseUrls.api | quote }}
+              value: {{ .Values.webapp.baseUrls.api | quote }}
             - name: CLIENT_BASE_URL
-              value: {{ .Values.global.baseUrls.client | quote }}
+              value: {{ .Values.webapp.baseUrls.client | quote }}
             - name: CLOUDINARY_API_KEY
               value: {{ .Values.webapp.cloudinary.apiKey | quote }}
             - name: CLOUDINARY_CLOUD_NAME
