@@ -7,10 +7,9 @@ appVersion: "1.16.0"
 keywords:
   - "ever-gauzy"
 dependencies:
-  - name: postgresql
-    condition: global.env.production
-    version: "13.2.9"
-    repository: https://charts.bitnami.com/bitnami
+  - name: ever-gauzy-api
+    version: "0.1.1"
+    repository: https://charts.ever.co
 home: https://gauzy.co
 sources:
   - "https://github.com/ever-co/ever-gauzy-charts"

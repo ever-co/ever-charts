@@ -1,12 +1,3 @@
-# Global configurations
-global:
-  env:
-    production: false  # Set the environment to production (true) or development (false)
-
-  baseUrls:
-    api: ""  # Set the base URL for the API
-    client: ""  # Set the base URL for the clien
-
 webapp:
   replicaCount: 1
   image:
@@ -29,6 +20,11 @@ webapp:
     name: ""
   
   # App configurations
+  env:
+    production: false
+  baseUrls:
+    api: ""  # Set the base URL for the API
+    client: ""  # Set the base URL for the client
 
   # Configurations for Cloudinary
   cloudinary:
@@ -110,7 +106,17 @@ webapp:
 
   affinity: {}
   
-api:
+ever-gauzy-api:
+  # Global configurations
+  global:
+    env:
+      production: false  # Set the environment to production (true) or development (false)
+
+    baseUrls:
+      api: ""  # Set the base URL for the API
+      client: ""  # Set the base URL for the client
+
+
   replicaCount: 1
 
   image:
@@ -131,7 +137,7 @@ api:
     # The name of the service account to use.
     # If not set and create is true, a name is generated using the fullname template
     name: ""
-  
+
   # app configurations
   loglevel: "info"  # Set the log level to "info"
 
@@ -167,7 +173,7 @@ api:
     wasabiRegion: ""  # Specify the Wasabi region
     wasabiServiceUrl: ""  # Provide the Wasabi Service URL if applicable
     wasabiS3Bucket: ""  # Specify the Wasabi S3 bucket name
-  
+
   # App configurations for mail
   mailConfig:
     mailFromAddress: ""  # Set the email address used in the 'From' field
@@ -279,43 +285,42 @@ api:
 
   affinity: {}
 
-postgresql:
-  global:
-    ## @param global.imageRegistry Global Docker image registry
-    ##
-    imageRegistry: ""
-    ## @param global.imagePullSecrets Global Docker registry secret names as an array
-    ## e.g.
-    ## imagePullSecrets:
-    ##   - myRegistryKeySecretName
-    ##
-    imagePullSecrets: []
-    ## @param global.storageClass Global StorageClass for Persistent Volume(s)
-    ##
-    storageClass: ""
-    postgresql:
-      ## @param global.postgresql.auth.postgresPassword Password for the "postgres" admin user (overrides `auth.postgresPassword`)
-      ## @param global.postgresql.auth.username Name for a custom user to create (overrides `auth.username`)
-      ## @param global.postgresql.auth.password Password for the custom user to create (overrides `auth.password`)
-      ## @param global.postgresql.auth.database Name for a custom database to create (overrides `auth.database`)
-      ## @param global.postgresql.auth.existingSecret Name of existing secret to use for PostgreSQL credentials (overrides `auth.existingSecret`).
-      ## @param global.postgresql.auth.secretKeys.adminPasswordKey Name of key in existing secret to use for PostgreSQL credentials (overrides `auth.secretKeys.adminPasswordKey`). Only used when `global.postgresql.auth.existingSecret` is set.
-      ## @param global.postgresql.auth.secretKeys.userPasswordKey Name of key in existing secret to use for PostgreSQL credentials (overrides `auth.secretKeys.userPasswordKey`). Only used when `global.postgresql.auth.existingSecret` is set.
-      ## @param global.postgresql.auth.secretKeys.replicationPasswordKey Name of key in existing secret to use for PostgreSQL credentials (overrides `auth.secretKeys.replicationPasswordKey`). Only used when `global.postgresql.auth.existingSecret` is set.
+  postgresql:
+    global:
+      ## @param global.imageRegistry Global Docker image registry
       ##
-      auth:
-        postgresPassword: ""
-        username: ""
-        password: ""
-        database: ""
-        existingSecret: ""
-        secretKeys:
-          adminPasswordKey: ""
-          userPasswordKey: ""
-          replicationPasswordKey: ""
-      ## @param global.postgresql.service.ports.postgresql PostgreSQL service port (overrides `service.ports.postgresql`)
+      imageRegistry: ""
+      ## @param global.imagePullSecrets Global Docker registry secret names as an array
+      ## e.g.
+      ## imagePullSecrets:
+      ##   - myRegistryKeySecretName
       ##
-      service:
-        ports:
-          postgresql: ""
-
+      imagePullSecrets: []
+      ## @param global.storageClass Global StorageClass for Persistent Volume(s)
+      ##
+      storageClass: ""
+      postgresql:
+        ## @param global.postgresql.auth.postgresPassword Password for the "postgres" admin user (overrides `auth.postgresPassword`)
+        ## @param global.postgresql.auth.username Name for a custom user to create (overrides `auth.username`)
+        ## @param global.postgresql.auth.password Password for the custom user to create (overrides `auth.password`)
+        ## @param global.postgresql.auth.database Name for a custom database to create (overrides `auth.database`)
+        ## @param global.postgresql.auth.existingSecret Name of existing secret to use for PostgreSQL credentials (overrides `auth.existingSecret`).
+        ## @param global.postgresql.auth.secretKeys.adminPasswordKey Name of key in existing secret to use for PostgreSQL credentials (overrides `auth.secretKeys.adminPasswordKey`). Only used when `global.postgresql.auth.existingSecret` is set.
+        ## @param global.postgresql.auth.secretKeys.userPasswordKey Name of key in existing secret to use for PostgreSQL credentials (overrides `auth.secretKeys.userPasswordKey`). Only used when `global.postgresql.auth.existingSecret` is set.
+        ## @param global.postgresql.auth.secretKeys.replicationPasswordKey Name of key in existing secret to use for PostgreSQL credentials (overrides `auth.secretKeys.replicationPasswordKey`). Only used when `global.postgresql.auth.existingSecret` is set.
+        ##
+        auth:
+          postgresPassword: ""
+          username: ""
+          password: ""
+          database: ""
+          existingSecret: ""
+          secretKeys:
+            adminPasswordKey: ""
+            userPasswordKey: ""
+            replicationPasswordKey: ""
+        ## @param global.postgresql.service.ports.postgresql PostgreSQL service port (overrides `service.ports.postgresql`)
+        ##
+        service:
+          ports:
+            postgresql: ""
