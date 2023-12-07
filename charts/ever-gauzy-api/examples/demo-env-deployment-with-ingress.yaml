@@ -2,8 +2,7 @@ global:
   env:
     production: false
   baseUrls:
-    api: "apidemo-charts.gauzy.co"
-    client: "demo-charts.gauzy.co"
+    api: "demo-api.gauzy.co"
     
 loglevel: "info"
 adminPasswordReset: true
@@ -16,14 +15,14 @@ ingress:
     kubernetes.io/ingress.class: nginx
     # kubernetes.io/tls-acme: "true"
   hosts:
-    - host: apidemo-charts.gauzy.co
+    - host: demo-api.gauzy.co
       paths:
         - path: /
           pathType: Prefix
   tls:
     - secretName: chart-example-tls
       hosts:
-        - apidemo-charts.gauzy.co
+        - demo-api.gauzy.co
 envs:
   - name: EXPRESS_SESSION_SECRET
     value: "gauzy"
