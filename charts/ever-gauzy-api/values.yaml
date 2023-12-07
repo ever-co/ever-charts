@@ -5,12 +5,11 @@ global:
 
   baseUrls:
     api: ""  # Set the base URL for the API
-    client: ""  # Set the base URL for the clien
 
 replicaCount: 1
 
 image:
-  repository: ghcr.io/ever-co/ever-gauzy-api-demo
+  repository: ghcr.io/ever-co/gauzy-api-demo
   pullPolicy: IfNotPresent
   tag: "latest"
 imagePullSecrets: []
