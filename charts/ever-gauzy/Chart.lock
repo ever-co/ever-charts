@@ -1,6 +1,6 @@
 dependencies:
 - name: ever-gauzy-api
   repository: https://charts.ever.co
-  version: 0.1.1
-digest: sha256:75aa9277202805482980b6878676e3304b61e8aeec67301144fc32e35b903f27
-generated: "2023-12-07T20:50:02.6675607+06:00"
+  version: 0.1.2
+digest: sha256:a65ee1a944837aa56d54368359721f0a54e7c43cf62f54830c96d56ab385bf42
+generated: "2023-12-10T02:08:48.317205027+06:00"

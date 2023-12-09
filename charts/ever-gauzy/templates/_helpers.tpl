@@ -57,17 +57,17 @@ Create the name of the service account to use
 {{- end }}
 {{- end }}
 {{/*
-Create a variable based on demo env
+Create a variable based on production env
 */}}
 {{- define "ever-gauzy.demoenv" -}}
-{{- if not .Values.webapp.env.demo -}}
+{{- if not .Values.webapp.env.production -}}
 true
 {{- else -}}
 false
 {{- end -}}
 {{- end -}}
 {{- define "ever-gauzy.nodeenv" -}}
-{{- if not .Values.webapp.env.demo -}}
+{{- if not .Values.webapp.env.production -}}
 development
 {{- else -}}
 production
