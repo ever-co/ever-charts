@@ -1,0 +1,132 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "ever-teams.fullname" . }}
+  labels:
+    {{- include "ever-teams.labels" . | nindent 4 }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      {{- include "ever-teams.selectorLabels" . | nindent 6 }}
+  template:
+    metadata:
+      {{- with .Values.podAnnotations }}
+      annotations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      labels:
+        {{- include "ever-teams.labels" . | nindent 8 }}
+	{{- with .Values.podLabels }}
+        {{- toYaml . | nindent 8 }}
+        {{- end }}
+    spec:
+      {{- with .Values.imagePullSecrets }}
+      imagePullSecrets:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      serviceAccountName: {{ include "ever-teams.serviceAccountName" . }}
+      securityContext:
+        {{- toYaml .Values.podSecurityContext | nindent 8 }}
+      containers:
+        - name: {{ .Chart.Name }}
+          securityContext:
+            {{- toYaml .Values.securityContext | nindent 12 }}
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          env:
+            {{- with .Values.envs }}
+            {{- . | toYaml | trim | nindent 12 }}
+            {{- end }}
+            - name: DEMO
+              value: {{ include "ever-teams.demoenv" . | quote }}
+            - name: GAUZY_API_SERVER_URL
+              value: {{ .Values.gauzy.gauzyApiServerUrl | quote }}
+            - name: NEXT_PUBLIC_GAUZY_API_SERVER_URL
+              value: {{ .Values.gauzy.nextPublicGauzyApiServerUrl | quote }}
+            - name: NEXT_PUBLIC_SENTRY_DNS
+              value: {{ .Values.sentry.nextPublicSentryDns | quote }}
+            - name: SENTRY_DSN
+              value: {{ .Values.sentry.sentryDsn | quote }}
+            - name: SENTRY_AUTH_TOKEN
+              value: {{ .Values.sentry.sentryAuthToken | quote }}
+            - name: NEXT_PUBLIC_SENTRY_DEBUG
+              value: {{ .Values.sentry.sentryDebug | quote }}
+            - name: SENTRY_PROJECT
+              value: {{ .Values.sentry.sentryProject | quote }}
+            - name: SENTRY_ORG
+              value: {{ .Values.sentry.sentryOrg | quote }}
+            - name: NEXT_PUBLIC_JITSU_BROWSER_WRITE_KEY
+              value: {{ .Values.jitsu.nextPublicJitsuBrowserWriteKey | quote }}
+            - name: NEXT_PUBLIC_JITSU_BROWSER_URL
+              value: {{ .Values.jitsu.nextPublicJitsuBrowserUrl | quote }}
+            - name: JITSU_SERVER_WRITE_KEY
+              value: {{ .Values.jitsu.jitsuServerWriteKey | quote }}
+            - name: JITSU_SERVER_URL
+              value: {{ .Values.jitsu.jitsuServerUrl | quote }}
+            - name: MAILCHIMP_LIST_ID
+              value: {{ .Values.mailchimp.mailchimpListId | quote }}
+            - name: MAILCHIMP_API_KEY
+              value: {{ .Values.mailchimp.mailchimpApiKey | quote }}
+            - name: SMTP_FROM_ADDRESS
+              value: {{ .Values.smtp.smtpFromAddress | quote }}
+            - name: SMTP_HOST
+              value: {{ .Values.smtp.smtpHost | quote }}
+            - name: SMTP_SECURE
+              value: {{ .Values.smtp.smtpSecure | quote }}
+            - name: SMTP_USERNAME
+              value: {{ .Values.smtp.smtpUsername | quote }}
+            - name: SMTP_PASSWORD
+              value: {{ .Values.smtp.smtpPassword | quote }}
+            - name: NEXT_PUBLIC_BOARD_FIREBASE_CONFIG
+              value: {{ .Values.board.nextPublicBoardFirebaseConfig | quote }}
+            - name: NEXT_PUBLIC_BOARD_BACKEND_POST_URL
+              value: {{ .Values.board.nextPublicBoardBackendPostUrl | quote }}
+            - name: NEXT_PUBLIC_BOARD_APP_DOMAIN
+              value: {{ .Values.board.nextPublicBoardAppDomain | quote }}
+            - name: MEET_JWT_APP_SECRET
+              value: {{ .Values.meet.meetJwtAppSecret | quote }}
+            - name: MEET_JWT_APP_ID
+              value: {{ .Values.meet.meetJwtAppId | quote }}
+            - name: NEXT_PUBLIC_MEET_DOMAIN
+              value: {{ .Values.meet.nextPublicMeetDomain | quote }}
+            - name: NEXT_PUBLIC_CHATWOOT_API_KEY
+              value: {{ .Values.chatwoot.nextPublicChatwootApiKey | quote }}
+            - name: CAPTCHA_SECRET_KEY
+              value: {{ .Values.captcha.captchaSecretKey | quote }}
+            - name: NEXT_PUBLIC_CAPTCHA_SITE_KEY
+              value: {{ .Values.captcha.nextPublicCaptchaSiteKey | quote }}
+          ports:
+            - name: http
+              containerPort: {{ .Values.service.targetPort }}
+              protocol: TCP
+          # livenessProbe:
+          #   httpGet:
+          #     path: /
+          #     port: http
+          # readinessProbe:
+          #   httpGet:
+          #     path: /
+          #     port: http
+          resources:
+            {{- toYaml .Values.resources | nindent 12 }}
+          {{- with .Values.volumeMounts }}
+          volumeMounts:
+            {{- toYaml . | nindent 12 }}
+          {{- end }}
+      {{- with .Values.volumes }}
+      volumes:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.nodeSelector }}
+      nodeSelector:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.affinity }}
+      affinity:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.tolerations }}
+      tolerations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
