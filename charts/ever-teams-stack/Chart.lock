@@ -1,0 +1,9 @@
+dependencies:
+- name: ever-teams
+  repository: https://charts.ever.co
+  version: 0.1.0
+- name: ever-gauzy-api
+  repository: https://charts.ever.co
+  version: 0.1.2
+digest: sha256:26b0a608409b461acc96d507e88ac54f9f21db051b2b42816c06505df9e7f79d
+generated: "2023-12-11T02:27:49.685434117+06:00"
