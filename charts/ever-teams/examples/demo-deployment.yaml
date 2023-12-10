@@ -37,7 +37,7 @@ ingress:
     kubernetes.io/ingress.class: nginx
     # kubernetes.io/tls-acme: "true"
   hosts:
-    - host: demo-teams.saifzaman.me
+    - host: demo.ever.team
       paths:
         - path: /
           pathType: Prefix
