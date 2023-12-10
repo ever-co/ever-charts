@@ -1,0 +1,47 @@
+global:
+  env:
+    production: true
+
+image:
+  repository: ghcr.io/ever-co/ever-teams-webapp
+  tag: "latest"
+
+envs:
+  - name: NEXT_PUBLIC_COOKIE_DOMAINS
+    value: "ever.team"
+
+gauzy:
+  gauzyApiServerUrl: "https://api.gauzy.co"
+  nextPublicGauzyApiServerUrl: "https://api.gauzy.co/api"
+
+sentry:
+  sentryProject: "ever-teams-web"
+  sentryDebug: "false"
+  sentryOrg: "ever-co"
+
+smtp:
+  smtpFromAddress: noreply@ever.team"
+
+board:
+  nextPublicBoardBackendPostUrl: "https://jsonboard.ever.team/api/v2/post/"
+  nextPublicBoardAppDomain: "https://board.ever.team"
+
+meet:
+  meetJwtAppId: "ever_teams"
+  nextPublicMeetDomain: "meet.ever.team"
+
+ingress:
+  enabled: true
+  className: "nginx"
+  annotations: 
+    kubernetes.io/ingress.class: nginx
+    # kubernetes.io/tls-acme: "true"
+  hosts:
+    - host: teams.saifzaman.me
+      paths:
+        - path: /
+          pathType: Prefix
+  tls: []
+  #  - secretName: chart-example-tls
+  #    hosts:
+  #      - chart-example.local
