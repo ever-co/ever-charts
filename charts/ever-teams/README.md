@@ -74,8 +74,7 @@ The command removes nearly all the Kubernetes components associated with the cha
 | `serviceAccount.create`              | Create a service account                                      | `true`                                            |
 | `serviceAccount.automount`           | Automatically mount a ServiceAccount's API credentials        | `true`                                            |
 | `serviceAccount.annotations`         | Annotations to add to the service account                      | `{}`                                              |
-| `serviceAccount.name`                | The name of the service account to use                         | `""` (generated using the fullname template)      |
-| `envs`                               | List of environment variables to configure                    | see below                                         |
+| `serviceAccount.name`                | The name of the service account to use                         | `""`                                             |
 | `gauzy.gauzyApiServerUrl`            | Gauzy API Server URL                                          | `""`                                              |
 | `gauzy.nextPublicGauzyApiServerUrl` | Next Public Gauzy API Server URL                               | `""`                                              |
 | `sentry.nextPublicSentryDns`         | Sentry DNS for Next Public                                    | `""`                                              |
