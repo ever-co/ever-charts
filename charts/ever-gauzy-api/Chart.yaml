@@ -2,7 +2,7 @@ apiVersion: v2
 name: ever-gauzy-api
 description: A Helm chart for Ever Gauzy Platform
 type: application
-version: 0.1.2
+version: 0.1.3
 appVersion: "1.16.0"
 keywords:
   - "ever-gauzy-api"
