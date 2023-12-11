@@ -2,13 +2,13 @@ apiVersion: v2
 name: ever-gauzy
 description: A Helm chart for Ever Gauzy Platform
 type: application
-version: 0.1.8
+version: 0.1.9
 appVersion: "1.16.0"
 keywords:
   - "ever-gauzy"
 dependencies:
   - name: ever-gauzy-api
-    version: "0.1.2"
+    version: "0.1.3"
     repository: https://charts.ever.co
 home: https://gauzy.co
 sources:
