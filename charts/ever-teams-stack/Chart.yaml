@@ -8,10 +8,10 @@ keywords:
   - "ever-teams-stack"
 dependencies:
   - name: ever-teams
-    version: "0.1.0"
+    version: "0.1.2"
     repository: https://charts.ever.co
   - name: ever-gauzy-api
-    version: "0.1.2"
+    version: "0.1.3"
     repository: https://charts.ever.co
 home: https://app.ever.team
 sources:
