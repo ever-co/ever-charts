@@ -2,7 +2,7 @@ apiVersion: v2
 name: ever-teams
 description: A Helm chart for Ever Teams Platform
 type: application
-version: 0.1.1
+version: 0.1.2
 appVersion: "1.16.0"
 keywords:
   - "ever-teams"
