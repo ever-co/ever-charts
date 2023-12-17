@@ -879,7 +879,8 @@
         themeBtns.forEach((btn) => {
           btn.addEventListener("click", () => {
             document.documentElement.classList.toggle("theme__dark");
-            btn.classList.toggle("active");
+            themeBtns.forEach(b=>b.classList.toggle("active"))
+            
           });
         });
       }
