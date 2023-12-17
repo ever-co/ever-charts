@@ -207,7 +207,7 @@
         xhr.send();
       }
 
-      function createCard(chart, chartDescription, chartVersion) {
+      function createCard(chart, chartDescription, chartVersion,chartLogo,chartOverview) {
         chartName = chart
           .split("-")
           .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
@@ -215,13 +215,13 @@
         const cardHtml = `
         <article class="card__project">
           <div class="card__img">
-            <img src="../public/ever-gauzy-overview.png" alt="Image" />
+            <img src="${chartOverview}" alt="Image" />
           </div>
           <div class="card__body">
             <div class="project__header">
               <img
                 class="project__logo"
-                src="../public/logo-ever-gauzy.png"
+                src="${chartLogo}"
                 alt="Logo"
               />
               <div class="project__desc">
@@ -332,7 +332,7 @@
             return response.text();
           })
           .then((markdownContent) => {
-            showSection('output');
+            showSection("output");
             var htmlContent = marked.marked(markdownContent);
             document.getElementById("output").innerHTML = htmlContent;
           })
@@ -384,14 +384,12 @@
       function showSection(sectionId, sections = ["mainContent", "output"]) {
         sections.forEach((section) => {
           const currentSelection = document.getElementById(section);
-          console.log(currentSelection)
           currentSelection.style.display = "none";
         });
         const selectedSection = document.getElementById(sectionId);
         selectedSection.style.display = "block";
       }
       document.addEventListener("DOMContentLoaded", function () {
-        
         toggleTheme();
         SPALoading();
         loadCategory();
@@ -399,14 +397,17 @@
           if (error) {
             console.error(error);
           } else {
+            console.log(data.entries);
             Object.keys(data.entries).forEach((entry) => {
               const container = document.getElementById("cardContainer");
               const chartDescription = data.entries[entry][0]["description"];
               const chartVersion = data.entries[entry][0]["version"];
+              const logo = data.entries[entry][0]["logo"];
+              const overview = data.entries[entry][0]["overview"];
               const cardHtml = createCard(
                 entry,
                 chartDescription,
-                chartVersion
+                chartVersion,logo,overview
               );
               container.innerHTML += cardHtml;
             });
