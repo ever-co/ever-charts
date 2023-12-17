@@ -59,6 +59,9 @@
       font-size: inherit;
       cursor: pointer;
     }
+    button {
+      background-color: transparent;
+    }
 
     ul,
     ol {
@@ -74,10 +77,12 @@
       background-color: #0d1117;
       color: #fff;
     }
+
     .theme__dark .header,
     .theme__dark .footer {
       background-color: #0c162d;
       color: #fff;
+      box-shadow: none;
     }
 
     .container {
@@ -93,6 +98,10 @@
     }
     .header {
       height: 85px;
+      box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 10px 0px;
+    }
+    .footer {
+      background: 0% 0% no-repeat padding-box padding-box rgba(23, 58, 86, 0.05);
     }
     .header nav {
       display: flex;
@@ -123,10 +132,10 @@
     .sidebar {
       width: 100%;
       min-height: 260px;
-      border: 1px solid #281b77;
-      background-color: #0c162d;
       padding: 30px;
       margin-block: 40px;
+      border: 1px solid #dee2e6;
+      color: #636a6e;
     }
     .theme__dark .filter__clean-btn {
       color: #cbd3da;
@@ -147,17 +156,30 @@
       color: #a3a3a6;
     }
     .filter__header {
-      width: 240px;
+      width: 100%;
       display: flex;
       justify-content: space-between;
       align-items: center;
+    }
+    @media only screen and (min-width: 640px) {
+      .filter__header {
+        width: 240px;
+      }
     }
     .sidebar hr {
       height: 1px;
       border: none;
       background-color: transparent;
-      border-bottom: 0.5px solid #262e43;
       margin-block: 12px;
+      border-bottom: 1px solid #dee2e6;
+    }
+    .theme__dark .sidebar hr {
+      border-bottom: 0.5px solid #262e43;
+    }
+    .theme__dark .sidebar {
+      border: 1px solid #281b77;
+      background-color: #0c162d;
+      color: #fff;
     }
     .filter__block .filter__list {
       display: flex;
@@ -172,9 +194,12 @@
     .filter__list input {
       width: 16px;
       height: 16px;
+      appearance: none;
+      border: 1px solid #dee2e6;
+    }
+    .theme__dark .filter__list input {
       border: 1px solid #8c96a1;
       background-color: #2c2e31;
-      appearance: none;
     }
     .filter__list input:checked {
       appearance: checkbox;
@@ -190,30 +215,44 @@
       font-size: 16px;
     }
     .project__container {
-      display: flex;
-      flex-wrap: wrap;
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
       gap: 20px;
     }
     .card__project {
-      flex-basis: 620px;
       min-height: 300px;
       flex-grow: 1;
-      flex-shrink: 1;
       display: flex;
       flex-wrap: wrap;
+      color: #636a6e;
+      border: 1px solid #dee2e6;
+      
+    }
+    .card__project:hover{
+          box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.05);
+    }
+    .theme__dark .card__project {
       border: 1px solid #281b77;
       background-color: #0c162d;
+      color: #fff;
     }
     .card__img {
-      flex-basis: 400px;
-      flex-shrink: 0;
       flex-grow: 1;
     }
+
     .card__project .project__logo {
       width: 70px;
       height: 70px;
       border-radius: 5px;
       overflow: hidden;
+      border: 1px solid #dee2e6;
+    }
+
+    .project__logo {
+      flex: none;
+    }
+    .theme__dark .project__logo {
+      border-color: transparent;
     }
     .project__logo,
     .card__img img {
@@ -222,15 +261,13 @@
       object-fit: cover;
     }
     .card__body {
-      flex-basis: 200px;
-      max-width: 450px;
       width: max-content;
       flex-grow: 1;
       min-height: 300px;
       display: flex;
       flex-direction: column;
       row-gap: 20px;
-      padding: 20px;
+      padding: 10px;
     }
 
     .card__body .card__btn {
@@ -239,6 +276,8 @@
     .card__body .card__text {
       font-size: 14px;
       line-height: 25px;
+    }
+    .theme__dark .card__text {
       color: #a0a0a0;
     }
     .project__header {
@@ -253,6 +292,7 @@
     }
     .project__items {
       display: flex;
+      flex-wrap: wrap;
       align-items: center;
       column-gap: 15px;
       margin-top: auto;
@@ -271,6 +311,9 @@
       flex-direction: column;
       padding: 8px 15px;
       flex-grow: 1;
+      background-color: #f9f9f9;
+    }
+    .theme__dark .project__desc {
       background-color: #102b53;
     }
     .project__title {
@@ -281,9 +324,11 @@
     }
     .project__version {
       font-size: 14px;
-      color: #a0a0a0;
       display: flex;
       column-gap: 10px;
+    }
+    .theme__dark .project__version {
+      color: #a0a0a0;
     }
     .line {
       width: 1px;
@@ -293,26 +338,43 @@
     }
     .card__btn {
       padding: 10px 35px;
-      border: 5px solid #281b77;
+      border: 5px solid #dee2e6;
       color: #0c162d;
       background-color: #fff;
       width: max-content;
+      display: flex;
+      align-items: center;
+      column-gap: 10px;
       transition: color 0.3s, background-color 0.3s;
     }
+
     .card__btn:hover {
+      background-color: #dee2e6;
+    }
+    .theme__dark .card__btn:hover {
       background-color: #281b77;
       color: #fff;
     }
+
+    .theme__dark .card__btn {
+      border-color: #281b77;
+    }
+
     .project__stars {
       display: flex;
       align-items: center;
-      border: 1px solid #737475;
-      background-color: #222529;
       padding: 5px;
       column-gap: 5px;
       font-size: 10px;
       font-weight: bold;
+      border: 1px solid #c4c7ca;
+      background-color: rgba(248, 249, 250, 1);
     }
+    .theme__dark .project__stars {
+      border: 1px solid #737475;
+      background-color: #222529;
+    }
+
     .footer__content {
       display: flex;
       flex-direction: column;
@@ -325,21 +387,33 @@
       font-size: 15px;
       display: flex;
       align-items: center;
-      column-gap: 30px;
+      flex-wrap: wrap;
+      gap: 30px;
     }
 
     .footer__privary {
       display: flex;
       align-items: center;
-      row-gap: 10px;
+      column-gap: 10px;
     }
-    .footer__privary a:first-child,
-    .footer__privary a:not(:last-child):not(:last-child) {
-      /* border-right: 1px solid #ffffff; */
+
+    .card__body,
+    .card__img {
+      max-width: 260px;
+    }
+    @media only screen and (min-width: 320px) {
+      .card__body,
+      .card__img {
+        max-width: none;
+      }
     }
     @media only screen and (min-width: 640px) {
       .container {
         max-width: 640px;
+      }
+
+      .card__body {
+        padding: 15px;
       }
     }
     @media only screen and (min-width: 768px) {
@@ -352,6 +426,14 @@
         min-height: 320px;
       }
 
+      .card__body {
+        padding: 20px;
+      }
+      .project__container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+      }
+
       .container {
         max-width: 1024px;
       }
@@ -361,15 +443,26 @@
       .card__project {
         flex-wrap: nowrap;
       }
+      .card__body {
+        width: 45%;
+        max-width: 450px;
+        flex-shrink: 1;
+      }
+      .card__img {
+        width: 55%;
+        flex-shrink: 1;
+      }
 
       .container {
         padding: 0;
-        max-width: 1536px;
+        max-width: 95%;
       }
     }
     .footer .container {
       display: flex;
       justify-content: space-between;
+      gap:30px;
+      flex-wrap: wrap;
     }
     .footer a:hover {
       text-decoration: underline;
@@ -403,7 +496,23 @@
       width: 100%;
       height: 100%;
     }
-    .icon-theme.active {
+    .theme-btn .dark-icon,
+    .theme-btn.active .light-icon {
+      background-color: transparent;
+    }
+    .theme-btn .dark-icon,
+    .theme-btn .light-icon {
+      transition: color 0.3s, background-color 0.3s;
+    }
+    .theme__dark .theme-btn .dark-icon,
+    .theme__dark .theme-btn.active .light-icon {
+      color: #fff;
+    }
+    .theme-btn .light-icon {
+      background-color: #82848f;
+      color: #2a3342;
+    }
+    .theme-btn.active .dark-icon {
       background-color: #82848f;
       color: #2a3342;
     }
@@ -432,10 +541,9 @@
             />
           </svg>
         </a>
-        <button class="theme-btn">
-          <span class="icon-theme active">
+        <button class="theme-btn active">
+          <span class="icon-theme dark-icon">
             <svg
-              class="dark-icon"
               xmlns="http://www.w3.org/2000/svg"
               width="32"
               height="32"
@@ -447,7 +555,7 @@
               />
             </svg>
           </span>
-          <span class="icon-theme">
+          <span class="icon-theme light-icon">
             <svg
               class="light-icon"
               xmlns="http://www.w3.org/2000/svg"
@@ -505,11 +613,9 @@
           </div>
         </div>
       </div>
-      <div class="project__container"
-            id="cardContainer">
-      </div>
+      <div class="project__container" id="cardContainer"></div>
 
-          <div id="output"></div>
+      <div id="output"></div>
     </main>
 
     <footer class="footer">
@@ -558,10 +664,9 @@
           </div>
         </div>
 
-        <button class="theme-btn">
-          <span class="icon-theme active">
+        <button class="theme-btn active">
+          <span class="icon-theme dark-icon">
             <svg
-              class="dark-icon"
               xmlns="http://www.w3.org/2000/svg"
               width="32"
               height="32"
@@ -573,7 +678,7 @@
               />
             </svg>
           </span>
-          <span class="icon-theme">
+          <span class="icon-theme light-icon">
             <svg
               class="light-icon"
               xmlns="http://www.w3.org/2000/svg"
@@ -764,7 +869,17 @@
               </li>`;
         });
       }
+      function toggleTheme() {
+        const themeBtns = document.querySelectorAll(".theme-btn");
+        themeBtns.forEach((btn) => {
+          btn.addEventListener("click", () => {
+            document.documentElement.classList.toggle("theme__dark");
+            btn.classList.toggle("active");
+          });
+        });
+      }
       document.addEventListener("DOMContentLoaded", function () {
+        toggleTheme();
         loadCategory();
         loadYAMLFile(yamlFilePath, function (error, data) {
           if (error) {
