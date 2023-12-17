@@ -538,9 +538,28 @@ table tr {
   border: 1px solid var(--border-md);
   padding: 6px 13px;
 }
+.theme__dark table td,
+.theme__dark table th,
+.theme__dark table tr {
+  border: 0.5px solid #262e43;
+}
 th {
   text-align: inherit;
   text-align: -webkit-match-parent;
+}
+code {
+  font-size: 0.875em;
+  color: #d63384;
+  word-wrap: break-word;
+}
+pre code {
+  font-size: inherit;
+  color: inherit;
+  word-break: normal;
+}
+#output a {
+  color: #0d6efd;
+  text-decoration: underline;
 }
 td {
   line-height: 1.65;
