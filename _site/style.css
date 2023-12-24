@@ -106,10 +106,14 @@ ol {
   align-items: center;
   height: 100%;
 }
+.header .logo{
+  width:100px;
+}
 .logo {
   width: 150px;
   height: 40px;
 }
+
 .logo svg {
   width: 100%;
   height: 100%;
@@ -128,7 +132,8 @@ ol {
 
 .sidebar {
   width: 100%;
-  min-height: 260px;
+  height:max-content;
+  /* min-height: 260px; */
   padding: 30px;
   margin-block: 40px;
   border: 1px solid #dee2e6;
@@ -180,8 +185,8 @@ ol {
 }
 .filter__block .filter__list {
   display: flex;
-  flex-direction: column;
-  row-gap: 18px;
+  flex-wrap:wrap;
+  gap: 18px;
 }
 .filter__list label {
   display: flex;
@@ -464,7 +469,7 @@ ol {
   text-decoration: underline;
 }
 .copyright-bottom {
-  font-weight: 600;
+  font-weight: 500;
   font-size: 14px;
   color: #647b8e;
 }
