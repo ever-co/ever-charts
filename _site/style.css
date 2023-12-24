@@ -104,6 +104,7 @@ ol {
   left:0;
   right:0;
   z-index:5;
+  background-color:#fff;
 }
 .footer {
   background: 0% 0% no-repeat padding-box padding-box rgba(23, 58, 86, 0.05);
