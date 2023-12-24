@@ -340,7 +340,20 @@
             console.error("Error:", error);
           });
       }
+      function filterData(){
+        const filtersHTML = document.querySelectorAll('.filter-input');
+        
+        filtersHTML.forEach((input,index)=>{
+          addEventListener('check',(e)=>{
+          const target = e.target
+          const value = target.value.toLowerCase();
+          console.log(value);
+          if(value){
 
+          }
+        })
+        })
+      }
       function loadCategory() {
         const filterCategories = [
           { name: "Ever Teams", numberItem: 1 },
@@ -353,7 +366,7 @@
           filterList.innerHTML += `
               <li>
                 <label for="ever-help-${index}">
-                  <input type="checkbox" id="ever-help-${index}" />
+                  <input type="checkbox" class="filter-input" id="ever-help-${index}" value="${category.name}" />
                   <span class="filter__text">${category.name}</span>
                   <span>(${category.numberItem})</span>
                 </label>
@@ -393,6 +406,7 @@
         toggleTheme();
         SPALoading();
         loadCategory();
+        filterData();
         loadYAMLFile(yamlFilePath, function (error, data) {
           if (error) {
             console.error(error);

@@ -64,6 +64,9 @@ ol {
   list-style: none;
   padding: 0;
 }
+#mainContainer{
+  margin-top: 140px;
+}
 
 .footer {
   margin-top: auto;
@@ -96,15 +99,25 @@ ol {
 .header {
   height: 85px;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 10px 0px;
+  position:fixed;
+  top:0;
+  left:0;
+  right:0;
+  z-index:5;
 }
 .footer {
   background: 0% 0% no-repeat padding-box padding-box rgba(23, 58, 86, 0.05);
 }
+
 .header nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
   height: 100%;
+}
+.header .container{
+  display:flex;
+  align-items:center;
 }
 .header .logo{
   width:100px;
@@ -619,6 +632,26 @@ img {
   max-width: 100%;
   height: auto;
   object-fit: cover;
+}
+.not-found-container{
+  min-height:15rem;
+  display:flex;
+  flex-direction:column;
+  background-color:inherit;
+  color:inherit;
+}
+.not-found-image{
+  flex flex-auto flex-col justify-center items-center p-4 md:p-5
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  padding:2rem;
+}
+.not-found-image svg {
+  width:40px;
+  height:40px;
+  color:inherit;
 }
 @media (min-width: 1200px) {
   #output h2 {
