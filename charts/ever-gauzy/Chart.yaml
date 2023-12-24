@@ -4,6 +4,7 @@ description: A Helm chart for Ever Gauzy Platform
 type: application
 version: 0.1.9
 appVersion: "1.16.0"
+icon: "https://raw.githubusercontent.com/ever-co/ever-charts/develop/_site/assets/logo-ever-gauzy.png"
 keywords:
   - "ever-gauzy"
 dependencies:
