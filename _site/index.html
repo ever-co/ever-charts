@@ -1,155 +1,419 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="en" class="theme__dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- HTML in your document's head -->
+    <link rel="preconnect" href="https://rsms.me/" />
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Ever Helm Charts</title>
+  </head>
+  <body>
+    <header class="header">
+      <nav class="container">
+        <a href="index.html" className="logo">
+          <svg
+            width="149"
+            height="34"
+            viewBox="0 0 149 34"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M88.7522 33.085C86.5721 33.1164 84.4042 32.7551 82.3522 32.0183C80.6356 31.3906 79.0802 30.3886 77.7989 29.085C75.3218 26.3637 74.0185 22.775 74.1722 19.0983C74.1029 14.0554 76.0245 9.18843 79.5202 5.55301C81.3123 3.76183 83.4459 2.34894 85.7945 1.39818C88.1431 0.447432 90.6588 -0.021798 93.1922 0.0183454C96.5162 -0.15773 99.7825 0.938818 102.327 3.08501C103.356 4.08533 104.165 5.2904 104.699 6.62243C105.234 7.95447 105.484 9.38386 105.432 10.8183C105.357 13.6603 104.703 16.4571 103.512 19.0383H84.8455C84.8123 19.6799 84.91 20.3215 85.1325 20.9241C85.3551 21.5267 85.6979 22.0777 86.1402 22.5437C86.784 23.1233 87.5373 23.5683 88.3557 23.8525C89.1741 24.1366 90.041 24.2542 90.9055 24.1983C93.9123 24.0018 96.8214 23.0527 99.3655 21.4383L102.366 29.3583C98.2669 31.8523 93.5496 33.1437 88.7522 33.085ZM92.6522 8.23835C91.2193 8.20246 89.8124 8.6256 88.6371 9.44596C87.4617 10.2663 86.5793 11.441 86.1189 12.7983H96.2522C96.4335 12.2973 96.5347 11.7709 96.5522 11.2383C96.5522 9.38768 95.0575 8.23835 92.6522 8.23835ZM14.5922 33.085C12.4121 33.1164 10.2442 32.7551 8.1922 32.0183C6.47555 31.3906 4.92017 30.3886 3.63886 29.085C1.1618 26.3637 -0.141458 22.775 0.0121956 19.0983C-0.0570991 14.0554 1.86449 9.18843 5.3602 5.55301C7.15227 3.76183 9.28592 2.34894 11.6345 1.39818C13.9831 0.447432 16.4988 -0.021798 19.0322 0.0183454C22.3562 -0.15773 25.6225 0.938818 28.1669 3.08501C29.1963 4.08533 30.0046 5.2904 30.5395 6.62243C31.0743 7.95447 31.324 9.38386 31.2722 10.8183C31.1967 13.6603 30.5434 16.4571 29.3522 19.0383H10.6922C10.659 19.6799 10.7566 20.3215 10.9792 20.9241C11.2018 21.5267 11.5446 22.0777 11.9869 22.5437C12.6307 23.1233 13.384 23.5683 14.2024 23.8525C15.0207 24.1366 15.8877 24.2542 16.7522 24.1983C19.7589 24.0018 22.668 23.0527 25.2122 21.4383L28.2122 29.3583C24.1116 31.8535 19.3919 33.1449 14.5922 33.085ZM18.4922 8.23835C17.0582 8.20102 15.6498 8.62349 14.4731 9.44395C13.2964 10.2644 12.413 11.4399 11.9522 12.7983H22.0922C22.2735 12.2973 22.3747 11.7709 22.3922 11.2383C22.3922 9.38768 20.8975 8.23835 18.4922 8.23835ZM51.0122 32.8383C46.0415 32.8383 42.4495 31.5623 40.3362 29.0463C38.3362 26.6703 37.7135 23.2637 38.4695 18.913L39.5495 12.613C39.7842 11.4397 39.7429 10.7397 39.4162 10.3463C39.2972 10.2161 39.1497 10.1152 38.9853 10.0514C38.8208 9.98753 38.6439 9.96254 38.4682 9.97835C37.4557 9.99657 36.4576 10.2212 35.5349 10.6383L36.7949 1.51835C39.1806 0.666853 41.7024 0.260125 44.2349 0.318345C47.0122 0.318345 49.0269 1.04368 50.2242 2.47568C51.5375 4.04635 51.9042 6.51035 51.3149 9.79835L49.9949 17.1183C49.6562 19.2637 49.8362 20.7103 50.5442 21.5397C50.8016 21.8159 51.1176 22.0312 51.469 22.1696C51.8203 22.308 52.1982 22.3661 52.5749 22.3397C53.399 22.3788 54.2175 22.1858 54.9373 21.7828C55.6572 21.3797 56.2495 20.7827 56.6469 20.0597C57.6615 18.361 58.1549 15.7317 58.1549 12.0197C58.0924 8.24933 57.5676 4.50088 56.5922 0.858345H68.5322C69.0945 4.18975 69.3954 7.56002 69.4322 10.9383C69.4322 25.061 62.8909 32.8383 51.0122 32.8383ZM122.346 32.2383H111.132L114.552 12.6183C114.79 11.8592 114.731 11.0379 114.386 10.321C114.269 10.1999 114.128 10.1063 113.971 10.0471C113.814 9.98777 113.646 9.9643 113.479 9.97835C112.45 10.0359 111.437 10.2587 110.479 10.6383L111.799 1.51835C114.215 0.706522 116.75 0.301022 119.299 0.318345C120.889 0.251189 122.468 0.616605 123.867 1.37568C124.487 1.75283 125.024 2.25271 125.445 2.84469C125.865 3.43667 126.16 4.10827 126.312 4.81835C127.125 3.42942 128.292 2.28109 129.694 1.49053C131.096 0.699966 132.683 0.295481 134.292 0.318345C136.129 0.294278 137.944 0.727259 139.572 1.57835L136.392 12.1383C134.608 11.3029 132.662 10.8726 130.692 10.8783C127.05 10.8783 125.708 13.9983 125.226 15.8583L122.346 32.237V32.2383Z"
+              fill="currentColor"
+            />
+            <path
+              d="M134.679 26.6842C134.679 25.3657 135.07 24.0768 135.802 22.9804C136.535 21.8841 137.576 21.0296 138.794 20.5251C140.012 20.0205 141.353 19.8884 142.646 20.1457C143.939 20.4029 145.127 21.0379 146.059 21.9702C146.992 22.9026 147.627 24.0904 147.884 25.3836C148.141 26.6769 148.009 28.0173 147.505 29.2355C147 30.4536 146.146 31.4948 145.049 32.2274C143.953 32.9599 142.664 33.3509 141.345 33.3509C139.578 33.3488 137.883 32.6457 136.634 31.396C135.384 30.1462 134.681 28.4517 134.679 26.6842ZM135.568 26.6842C135.568 27.8269 135.907 28.9439 136.542 29.894C137.177 30.844 138.079 31.5845 139.134 32.0218C140.19 32.4591 141.352 32.5735 142.472 32.3506C143.593 32.1277 144.623 31.5774 145.431 30.7694C146.239 29.9615 146.789 28.932 147.012 27.8114C147.235 26.6907 147.12 25.529 146.683 24.4734C146.246 23.4177 145.505 22.5154 144.555 21.8806C143.605 21.2457 142.488 20.9069 141.345 20.9069C139.814 20.9087 138.345 21.5179 137.262 22.601C136.179 23.6841 135.57 25.1525 135.568 26.6842ZM139.212 30.0176H138.296L139.531 22.9082H141.664C142.287 22.8707 142.9 23.0773 143.373 23.4842C143.57 23.6825 143.717 23.9243 143.803 24.19C143.888 24.4557 143.91 24.7378 143.867 25.0136C143.834 25.4475 143.664 25.8597 143.38 26.1896C143.07 26.5411 142.674 26.8054 142.231 26.9562L143.333 29.9602V30.0216H142.353L141.357 27.1416H139.716L139.212 30.0176ZM139.843 26.3749H141.191C141.617 26.3873 142.035 26.2558 142.377 26.0016C142.534 25.8825 142.665 25.7332 142.762 25.5626C142.86 25.392 142.922 25.2034 142.945 25.0082C142.978 24.8405 142.973 24.6676 142.93 24.502C142.888 24.3365 142.809 24.1824 142.7 24.0509C142.572 23.9277 142.42 23.8318 142.254 23.769C142.088 23.7062 141.911 23.6778 141.733 23.6856H140.312L139.843 26.3749Z"
+              fill="currentColor"
+            />
+          </svg>
+        </a>
+        <button class="theme-btn active">
+          <span class="icon-theme dark-icon">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="32"
+              height="32"
+              viewBox="0 0 24 24"
+            >
+              <path
+                fill="currentColor"
+                d="M12 21q-3.775 0-6.387-2.613T3 12q0-3.45 2.25-5.988T11 3.05q.325-.05.575.088t.4.362q.15.225.163.525t-.188.575q-.425.65-.638 1.375T11.1 7.5q0 2.25 1.575 3.825T16.5 12.9q.775 0 1.538-.225t1.362-.625q.275-.175.563-.162t.512.137q.25.125.388.375t.087.6q-.35 3.45-2.937 5.725T12 21m0-2q2.2 0 3.95-1.213t2.55-3.162q-.5.125-1 .2t-1 .075q-3.075 0-5.238-2.163T9.1 7.5q0-.5.075-1t.2-1q-1.95.8-3.163 2.55T5 12q0 2.9 2.05 4.95T12 19m-.25-6.75"
+              />
+            </svg>
+          </span>
+          <span class="icon-theme light-icon">
+            <svg
+              class="light-icon"
+              xmlns="http://www.w3.org/2000/svg"
+              width="32"
+              height="32"
+              viewBox="0 0 24 24"
+            >
+              <path
+                fill="currentColor"
+                d="M12 15q1.25 0 2.125-.875T15 12q0-1.25-.875-2.125T12 9q-1.25 0-2.125.875T9 12q0 1.25.875 2.125T12 15m0 2q-2.075 0-3.537-1.463T7 12q0-2.075 1.463-3.537T12 7q2.075 0 3.538 1.463T17 12q0 2.075-1.463 3.538T12 17M2 13q-.425 0-.712-.288T1 12q0-.425.288-.712T2 11h2q.425 0 .713.288T5 12q0 .425-.288.713T4 13zm18 0q-.425 0-.712-.288T19 12q0-.425.288-.712T20 11h2q.425 0 .713.288T23 12q0 .425-.288.713T22 13zm-8-8q-.425 0-.712-.288T11 4V2q0-.425.288-.712T12 1q.425 0 .713.288T13 2v2q0 .425-.288.713T12 5m0 18q-.425 0-.712-.288T11 22v-2q0-.425.288-.712T12 19q.425 0 .713.288T13 20v2q0 .425-.288.713T12 23M5.65 7.05L4.575 6q-.3-.275-.288-.7t.288-.725q.3-.3.725-.3t.7.3L7.05 5.65q.275.3.275.7t-.275.7q-.275.3-.687.288T5.65 7.05M18 19.425l-1.05-1.075q-.275-.3-.275-.712t.275-.688q.275-.3.688-.287t.712.287L19.425 18q.3.275.288.7t-.288.725q-.3.3-.725.3t-.7-.3M16.95 7.05q-.3-.275-.288-.687t.288-.713L18 4.575q.275-.3.7-.288t.725.288q.3.3.3.725t-.3.7L18.35 7.05q-.3.275-.7.275t-.7-.275M4.575 19.425q-.3-.3-.3-.725t.3-.7l1.075-1.05q.3-.275.712-.275t.688.275q.3.275.288.688t-.288.712L6 19.425q-.275.3-.7.288t-.725-.288M12 12"
+              />
+            </svg>
+          </span>
+        </button>
+      </nav>
+    </header>
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="">
-  <title>Ever Helm Charts</title>
-  <!-- Bootstrap core CSS -->
-  <link href="https://getbootstrap.com/docs/5.0/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-  <style>
-    .bd-placeholder-img {
-      font-size: 1.125rem;
-      text-anchor: middle;
-      -webkit-user-select: none;
-      -moz-user-select: none;
-      user-select: none;
-    }
-
-    @media (min-width: 768px) {
-      .bd-placeholder-img-lg {
-        font-size: 3.5rem;
-      }
-    }
-  </style>
-
-
-</head>
-
-<body>
-  <main>
-
-    <section class="py-5 text-center container">
-      <div class="row py-lg-5">
-        <div class="col-lg-6 col-md-8 mx-auto">
-          <h1 class="fw-light">Ever Helm Charts</h1>
-          <p class="lead text-muted">Ever® - Open Platform for Collaborative, On-Demand and Sharing Economies.</p>
+    <main class="container main__contain" id="mainContainer">
+      <section id="mainContent">
+        <div class="block-context">
+          <h1 class="title title-1">Ever Helm Charts</h1>
+          <p>
+            Ever® - Open Platform for Collaborative, On-Demand and Sharing
+            Economies.
+          </p>
         </div>
-      </div>
-    </section>
+        <div class="sidebar">
+          <div class="filters">
+            <div class="filter__header">
+              <p class="filter__title">FILTERS</p>
+              <button class="filter__clean-btn">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 16 16"
+                >
+                  <g
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="1.5"
+                  >
+                    <path d="m10.25 5.75l-4.5 4.5m0-4.5l4.5 4.5" />
+                    <circle cx="8" cy="8" r="6.25" />
+                  </g>
+                </svg>
+                <span>Reset</span>
+              </button>
+            </div>
+            <hr />
+            <div class="filter__block">
+              <h5 class="title">Category</h5>
+              <ul class="filter__list"></ul>
+            </div>
+          </div>
+        </div>
+        <div class="project__container" id="cardContainer"></div>
+      </section>
+      <section id="output"></section>
+    </main>
 
-    <div class="album py-5 bg-light">
+    <footer class="footer">
       <div class="container">
+        <a href="index.html" className="logo">
+          <svg
+            width="149"
+            height="34"
+            viewBox="0 0 149 34"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M88.7522 33.085C86.5721 33.1164 84.4042 32.7551 82.3522 32.0183C80.6356 31.3906 79.0802 30.3886 77.7989 29.085C75.3218 26.3637 74.0185 22.775 74.1722 19.0983C74.1029 14.0554 76.0245 9.18843 79.5202 5.55301C81.3123 3.76183 83.4459 2.34894 85.7945 1.39818C88.1431 0.447432 90.6588 -0.021798 93.1922 0.0183454C96.5162 -0.15773 99.7825 0.938818 102.327 3.08501C103.356 4.08533 104.165 5.2904 104.699 6.62243C105.234 7.95447 105.484 9.38386 105.432 10.8183C105.357 13.6603 104.703 16.4571 103.512 19.0383H84.8455C84.8123 19.6799 84.91 20.3215 85.1325 20.9241C85.3551 21.5267 85.6979 22.0777 86.1402 22.5437C86.784 23.1233 87.5373 23.5683 88.3557 23.8525C89.1741 24.1366 90.041 24.2542 90.9055 24.1983C93.9123 24.0018 96.8214 23.0527 99.3655 21.4383L102.366 29.3583C98.2669 31.8523 93.5496 33.1437 88.7522 33.085ZM92.6522 8.23835C91.2193 8.20246 89.8124 8.6256 88.6371 9.44596C87.4617 10.2663 86.5793 11.441 86.1189 12.7983H96.2522C96.4335 12.2973 96.5347 11.7709 96.5522 11.2383C96.5522 9.38768 95.0575 8.23835 92.6522 8.23835ZM14.5922 33.085C12.4121 33.1164 10.2442 32.7551 8.1922 32.0183C6.47555 31.3906 4.92017 30.3886 3.63886 29.085C1.1618 26.3637 -0.141458 22.775 0.0121956 19.0983C-0.0570991 14.0554 1.86449 9.18843 5.3602 5.55301C7.15227 3.76183 9.28592 2.34894 11.6345 1.39818C13.9831 0.447432 16.4988 -0.021798 19.0322 0.0183454C22.3562 -0.15773 25.6225 0.938818 28.1669 3.08501C29.1963 4.08533 30.0046 5.2904 30.5395 6.62243C31.0743 7.95447 31.324 9.38386 31.2722 10.8183C31.1967 13.6603 30.5434 16.4571 29.3522 19.0383H10.6922C10.659 19.6799 10.7566 20.3215 10.9792 20.9241C11.2018 21.5267 11.5446 22.0777 11.9869 22.5437C12.6307 23.1233 13.384 23.5683 14.2024 23.8525C15.0207 24.1366 15.8877 24.2542 16.7522 24.1983C19.7589 24.0018 22.668 23.0527 25.2122 21.4383L28.2122 29.3583C24.1116 31.8535 19.3919 33.1449 14.5922 33.085ZM18.4922 8.23835C17.0582 8.20102 15.6498 8.62349 14.4731 9.44395C13.2964 10.2644 12.413 11.4399 11.9522 12.7983H22.0922C22.2735 12.2973 22.3747 11.7709 22.3922 11.2383C22.3922 9.38768 20.8975 8.23835 18.4922 8.23835ZM51.0122 32.8383C46.0415 32.8383 42.4495 31.5623 40.3362 29.0463C38.3362 26.6703 37.7135 23.2637 38.4695 18.913L39.5495 12.613C39.7842 11.4397 39.7429 10.7397 39.4162 10.3463C39.2972 10.2161 39.1497 10.1152 38.9853 10.0514C38.8208 9.98753 38.6439 9.96254 38.4682 9.97835C37.4557 9.99657 36.4576 10.2212 35.5349 10.6383L36.7949 1.51835C39.1806 0.666853 41.7024 0.260125 44.2349 0.318345C47.0122 0.318345 49.0269 1.04368 50.2242 2.47568C51.5375 4.04635 51.9042 6.51035 51.3149 9.79835L49.9949 17.1183C49.6562 19.2637 49.8362 20.7103 50.5442 21.5397C50.8016 21.8159 51.1176 22.0312 51.469 22.1696C51.8203 22.308 52.1982 22.3661 52.5749 22.3397C53.399 22.3788 54.2175 22.1858 54.9373 21.7828C55.6572 21.3797 56.2495 20.7827 56.6469 20.0597C57.6615 18.361 58.1549 15.7317 58.1549 12.0197C58.0924 8.24933 57.5676 4.50088 56.5922 0.858345H68.5322C69.0945 4.18975 69.3954 7.56002 69.4322 10.9383C69.4322 25.061 62.8909 32.8383 51.0122 32.8383ZM122.346 32.2383H111.132L114.552 12.6183C114.79 11.8592 114.731 11.0379 114.386 10.321C114.269 10.1999 114.128 10.1063 113.971 10.0471C113.814 9.98777 113.646 9.9643 113.479 9.97835C112.45 10.0359 111.437 10.2587 110.479 10.6383L111.799 1.51835C114.215 0.706522 116.75 0.301022 119.299 0.318345C120.889 0.251189 122.468 0.616605 123.867 1.37568C124.487 1.75283 125.024 2.25271 125.445 2.84469C125.865 3.43667 126.16 4.10827 126.312 4.81835C127.125 3.42942 128.292 2.28109 129.694 1.49053C131.096 0.699966 132.683 0.295481 134.292 0.318345C136.129 0.294278 137.944 0.727259 139.572 1.57835L136.392 12.1383C134.608 11.3029 132.662 10.8726 130.692 10.8783C127.05 10.8783 125.708 13.9983 125.226 15.8583L122.346 32.237V32.2383Z"
+              fill="currentColor"
+            />
+            <path
+              d="M134.679 26.6842C134.679 25.3657 135.07 24.0768 135.802 22.9804C136.535 21.8841 137.576 21.0296 138.794 20.5251C140.012 20.0205 141.353 19.8884 142.646 20.1457C143.939 20.4029 145.127 21.0379 146.059 21.9702C146.992 22.9026 147.627 24.0904 147.884 25.3836C148.141 26.6769 148.009 28.0173 147.505 29.2355C147 30.4536 146.146 31.4948 145.049 32.2274C143.953 32.9599 142.664 33.3509 141.345 33.3509C139.578 33.3488 137.883 32.6457 136.634 31.396C135.384 30.1462 134.681 28.4517 134.679 26.6842ZM135.568 26.6842C135.568 27.8269 135.907 28.9439 136.542 29.894C137.177 30.844 138.079 31.5845 139.134 32.0218C140.19 32.4591 141.352 32.5735 142.472 32.3506C143.593 32.1277 144.623 31.5774 145.431 30.7694C146.239 29.9615 146.789 28.932 147.012 27.8114C147.235 26.6907 147.12 25.529 146.683 24.4734C146.246 23.4177 145.505 22.5154 144.555 21.8806C143.605 21.2457 142.488 20.9069 141.345 20.9069C139.814 20.9087 138.345 21.5179 137.262 22.601C136.179 23.6841 135.57 25.1525 135.568 26.6842ZM139.212 30.0176H138.296L139.531 22.9082H141.664C142.287 22.8707 142.9 23.0773 143.373 23.4842C143.57 23.6825 143.717 23.9243 143.803 24.19C143.888 24.4557 143.91 24.7378 143.867 25.0136C143.834 25.4475 143.664 25.8597 143.38 26.1896C143.07 26.5411 142.674 26.8054 142.231 26.9562L143.333 29.9602V30.0216H142.353L141.357 27.1416H139.716L139.212 30.0176ZM139.843 26.3749H141.191C141.617 26.3873 142.035 26.2558 142.377 26.0016C142.534 25.8825 142.665 25.7332 142.762 25.5626C142.86 25.392 142.922 25.2034 142.945 25.0082C142.978 24.8405 142.973 24.6676 142.93 24.502C142.888 24.3365 142.809 24.1824 142.7 24.0509C142.572 23.9277 142.42 23.8318 142.254 23.769C142.088 23.7062 141.911 23.6778 141.733 23.6856H140.312L139.843 26.3749Z"
+              fill="currentColor"
+            />
+          </svg>
+        </a>
 
-        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3" id="cardContainer">
+        <div class="footer__content">
+          <div class="copyright-top">
+            <p>
+              <strong>Copyright © 2020-present</strong> Ever Co. LTD.<strong>
+                All Rights Reserved</strong
+              >
+            </p>
 
+            <p class="footer__privary">
+              <a href="#">Terms of Service</a> |
+              <a href="#">Privacy Policy</a> |
+              <a href="#">Cookie Policy</a>
+            </p>
+          </div>
+
+          <div class="copyright-bottom">
+            <p>
+              *All product names, logos, and brands are the property of their
+              respective owners. All company, product and service names used in
+              this website are for identification purposes only. Use of these
+              names, logos, and brands does not imply endorsement.
+            </p>
+          </div>
         </div>
-        <br>
-        <hr>
-        <div id="output"></div>
+
+        <button class="theme-btn active">
+          <span class="icon-theme dark-icon">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="32"
+              height="32"
+              viewBox="0 0 24 24"
+            >
+              <path
+                fill="currentColor"
+                d="M12 21q-3.775 0-6.387-2.613T3 12q0-3.45 2.25-5.988T11 3.05q.325-.05.575.088t.4.362q.15.225.163.525t-.188.575q-.425.65-.638 1.375T11.1 7.5q0 2.25 1.575 3.825T16.5 12.9q.775 0 1.538-.225t1.362-.625q.275-.175.563-.162t.512.137q.25.125.388.375t.087.6q-.35 3.45-2.937 5.725T12 21m0-2q2.2 0 3.95-1.213t2.55-3.162q-.5.125-1 .2t-1 .075q-3.075 0-5.238-2.163T9.1 7.5q0-.5.075-1t.2-1q-1.95.8-3.163 2.55T5 12q0 2.9 2.05 4.95T12 19m-.25-6.75"
+              />
+            </svg>
+          </span>
+          <span class="icon-theme light-icon">
+            <svg
+              class="light-icon"
+              xmlns="http://www.w3.org/2000/svg"
+              width="32"
+              height="32"
+              viewBox="0 0 24 24"
+            >
+              <path
+                fill="currentColor"
+                d="M12 15q1.25 0 2.125-.875T15 12q0-1.25-.875-2.125T12 9q-1.25 0-2.125.875T9 12q0 1.25.875 2.125T12 15m0 2q-2.075 0-3.537-1.463T7 12q0-2.075 1.463-3.537T12 7q2.075 0 3.538 1.463T17 12q0 2.075-1.463 3.538T12 17M2 13q-.425 0-.712-.288T1 12q0-.425.288-.712T2 11h2q.425 0 .713.288T5 12q0 .425-.288.713T4 13zm18 0q-.425 0-.712-.288T19 12q0-.425.288-.712T20 11h2q.425 0 .713.288T23 12q0 .425-.288.713T22 13zm-8-8q-.425 0-.712-.288T11 4V2q0-.425.288-.712T12 1q.425 0 .713.288T13 2v2q0 .425-.288.713T12 5m0 18q-.425 0-.712-.288T11 22v-2q0-.425.288-.712T12 19q.425 0 .713.288T13 20v2q0 .425-.288.713T12 23M5.65 7.05L4.575 6q-.3-.275-.288-.7t.288-.725q.3-.3.725-.3t.7.3L7.05 5.65q.275.3.275.7t-.275.7q-.275.3-.687.288T5.65 7.05M18 19.425l-1.05-1.075q-.275-.3-.275-.712t.275-.688q.275-.3.688-.287t.712.287L19.425 18q.3.275.288.7t-.288.725q-.3.3-.725.3t-.7-.3M16.95 7.05q-.3-.275-.288-.687t.288-.713L18 4.575q.275-.3.7-.288t.725.288q.3.3.3.725t-.3.7L18.35 7.05q-.3.275-.7.275t-.7-.275M4.575 19.425q-.3-.3-.3-.725t.3-.7l1.075-1.05q.3-.275.712-.275t.688.275q.3.275.288.688t-.288.712L6 19.425q-.275.3-.7.288t-.725-.288M12 12"
+              />
+            </svg>
+          </span>
+        </button>
       </div>
-    </div>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-yaml/3.14.1/js-yaml.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/11.0.0/marked.min.js"></script>
+    <script>
+      const yamlFilePath = "index.yaml";
+      function loadYAMLFile(filePath, callback) {
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function () {
+          if (xhr.readyState === XMLHttpRequest.DONE) {
+            if (xhr.status === 200) {
+              const yamlData = xhr.responseText;
+              const jsonData = jsyaml.load(yamlData);
 
-
-
-  </main>
-
-  <footer class="text-muted py-5">
-    <div class="container">
-      <p class="float-end mb-1">
-        <a href="#">Back to top</a>
-      </p>
-      <p class="mb-1"> <strong>Copyright &copy;</strong> 2023-present Ever Co. LTD. <strong> All Rights Reserved
-        </strong> </p>
-      <p class="mb-1 mt-4">*All product names, logos, and brands are the property of their respective owners. All
-        company, product and service names used in this website are for identification purposes only. Use of these
-        names, logos, and brands does not imply endorsement.</p>
-    </div>
-  </footer>
-
-
-  <script src="https://getbootstrap.com/docs/5.0/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-    crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/js-yaml/3.14.1/js-yaml.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/11.0.0/marked.min.js"></script>
-  <script>
-    const yamlFilePath = 'index.yaml';
-
-    function loadYAMLFile(filePath, callback) {
-      var xhr = new XMLHttpRequest();
-      xhr.onreadystatechange = function () {
-        if (xhr.readyState === XMLHttpRequest.DONE) {
-          if (xhr.status === 200) {
-            const yamlData = xhr.responseText;
-            const jsonData = jsyaml.load(yamlData);
-
-            callback(null, jsonData);
-          } else {
-            callback("Error loading YAML file", null);
+              callback(null, jsonData);
+            } else {
+              callback("Error loading YAML file", null);
+            }
           }
-        }
-      };
-      xhr.open("GET", filePath, true);
-      xhr.send();
-    }
-
-
-    function createCard(chart, chartDescription, chartVersion) {
-      chartName = chart.split("-").map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(" ")
-      const cardHtml = `
-        <div class="col">
-            <div class="card" style="width: 18rem;">
-            <img src="./HELM.svg" class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">${chartName}</h5>
-                <p class="card-text">${chartDescription}</p>
-                <p class="card-text"> <strong> Current Version: ${chartVersion} </strong> </p>
-                <button onclick="convertMarkdownToHTML('${chart}')" class="btn btn-primary">Details</button>
-            </div>
-            </div>
-        </div>
-      `
-      return cardHtml
-    }
-
-
-    function convertMarkdownToHTML(chart) {
-      var mdFilePath = `https://raw.githubusercontent.com/ever-co/ever-charts/main/charts/${chart}/README.md`
-
-      fetch(mdFilePath)
-        .then(response => {
-          if (!response.ok) {
-            throw new Error('Failed to load Markdown file');
-          }
-          return response.text();
-        })
-        .then(markdownContent => {
-          var htmlContent = marked.marked(markdownContent);
-          document.getElementById('output').innerHTML = htmlContent;
-        })
-        .catch(error => {
-          console.error('Error:', error);
-        });
-    }
-
-
-    loadYAMLFile(yamlFilePath, function (error, data) {
-      if (error) {
-        console.error(error);
-      } else {
-        Object.keys(data.entries).forEach(entry => {
-          const container = document.getElementById('cardContainer');
-          chartDescription = data.entries[entry][0]["description"]
-          chartVersion = data.entries[entry][0]["version"]
-          const cardHtml = createCard(entry, chartDescription, chartVersion)
-          container.innerHTML += cardHtml
-        })
+        };
+        xhr.open("GET", filePath, true);
+        xhr.send();
       }
-    });
-  </script>
-</body>
 
+      function createCard(chart, chartDescription, chartVersion,chartLogo,chartOverview) {
+        chartName = chart
+          .split("-")
+          .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+          .join(" ");
+        const cardHtml = `
+        <article class="card__project">
+          <div class="card__img">
+            <img src="${chartOverview}" alt="Image" />
+          </div>
+          <div class="card__body">
+            <div class="project__header">
+              <img
+                class="project__logo"
+                src="${chartLogo}"
+                alt="Logo"
+              />
+              <div class="project__desc">
+                <h3 class="project__title">
+                  <span>${chartName}</span>
+                  <span class="project__stars">
+                    <svg
+                      width="11"
+                      height="10"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M4.478.635 3.253 3.117l-2.74.4A.6.6 0 0 0 .183 4.54l1.982 1.932L1.695 9.2a.6.6 0 0 0 .87.632l2.45-1.288 2.451 1.288a.6.6 0 0 0 .87-.632l-.468-2.728L9.849 4.54a.6.6 0 0 0-.331-1.023l-2.74-.4L5.554.635a.6.6 0 0 0-1.076 0Z"
+                        fill="currentColor"
+                      />
+                    </svg>
+                    1.6k
+                  </span>
+                </h3>
+                <div class="project__items">
+                  <p class="project__item">
+                    <svg
+                      width="12"
+                      height="14"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M6.4 7a3.2 3.2 0 1 0 0-6.4 3.2 3.2 0 0 0 0 6.4Zm2.24.8h-.418a4.357 4.357 0 0 1-3.645 0H4.16A3.36 3.36 0 0 0 .8 11.16v1.04A1.2 1.2 0 0 0 2 13.4h8.8a1.2 1.2 0 0 0 1.2-1.2v-1.04A3.36 3.36 0 0 0 8.64 7.8Z"
+                        fill="currentColor"
+                      />
+                    </svg>
+                    <span>ever-co</span>
+                  </p>
+
+                  <p class="project__item">
+                    <svg
+                      width="15"
+                      height="14"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <g
+                        clip-path="url(#a)"
+                        stroke="currentColor"
+                        stroke-width="1.133"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      >
+                        <path
+                          d="m9.953 5.324-5.097-2.94M12.501 9.06V4.53a1.132 1.132 0 0 0-.566-.98L7.97 1.285a1.132 1.132 0 0 0-1.132 0L2.875 3.55a1.133 1.133 0 0 0-.566.98v4.53a1.133 1.133 0 0 0 .566.979l3.964 2.265a1.132 1.132 0 0 0 1.132 0l3.964-2.265a1.133 1.133 0 0 0 .566-.98Z"
+                        />
+                        <path
+                          d="m2.46 3.941 4.944 2.86 4.944-2.86M7.404 12.503V6.795"
+                        />
+                      </g>
+                      <defs>
+                        <clipPath id="a">
+                          <path
+                            fill="currentColor"
+                            transform="translate(.61)"
+                            d="M0 0h13.59v13.59H0z"
+                          />
+                        </clipPath>
+                      </defs>
+                    </svg>
+                    <span>helm-charts</span>
+                  </p>
+                </div>
+              </div>
+            </div>
+            <p class="card__text">${chartDescription}
+            </p>
+            <div class="project__version">
+              <span> Version ${chartVersion}  </span>
+              <hr class="line" />
+              <span>Updated 1 month ago </span>
+            </div>
+
+            <button class="card__btn" onclick="convertMarkdownToHTML('${chart}')"
+              ><svg
+                width="11"
+                height="10"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M5.11 0 2.36 4.5h5.5L5.11 0Zm0 1.92.964 1.58H4.14l.97-1.58ZM7.86 5.5a2.247 2.247 0 0 0-2.25 2.25A2.247 2.247 0 0 0 7.86 10a2.247 2.247 0 0 0 2.25-2.25A2.247 2.247 0 0 0 7.86 5.5Zm0 3.5a1.25 1.25 0 1 1 0-2.5 1.25 1.25 0 0 1 0 2.5Zm-7.25.75h4v-4h-4v4Zm1-3h2v2h-2v-2Z"
+                  fill="currentColor"
+                /></svg
+              ><span>Details</span></button
+            >
+          </div>
+        </article>
+      `;
+        return cardHtml;
+      }
+
+      function convertMarkdownToHTML(chart) {
+        var mdFilePath = `https://raw.githubusercontent.com/ever-co/ever-charts/main/charts/${chart}/README.md`;
+
+        fetch(mdFilePath)
+          .then((response) => {
+            if (!response.ok) {
+              throw new Error("Failed to load Markdown file");
+            }
+            return response.text();
+          })
+          .then((markdownContent) => {
+            showSection("output");
+            var htmlContent = marked.marked(markdownContent);
+            document.getElementById("output").innerHTML = htmlContent;
+          })
+          .catch((error) => {
+            console.error("Error:", error);
+          });
+      }
+
+      function loadCategory() {
+        const filterCategories = [
+          { name: "Ever Teams", numberItem: 1 },
+          { name: "Ever Gauzy", numberItem: 4 },
+          { name: "Ever Demand", numberItem: 1 },
+          { name: "Ever Traduora", numberItem: 1 },
+        ];
+        const filterList = document.querySelector(".filter__list");
+        filterCategories.forEach((category, index) => {
+          filterList.innerHTML += `
+              <li>
+                <label for="ever-help-${index}">
+                  <input type="checkbox" id="ever-help-${index}" />
+                  <span class="filter__text">${category.name}</span>
+                  <span>(${category.numberItem})</span>
+                </label>
+              </li>`;
+        });
+      }
+      function toggleTheme() {
+        const themeBtns = document.querySelectorAll(".theme-btn");
+        themeBtns.forEach((btn) => {
+          btn.addEventListener("click", () => {
+            document.documentElement.classList.toggle("theme__dark");
+            themeBtns.forEach((b) => b.classList.toggle("active"));
+          });
+        });
+      }
+
+      function SPALoading() {
+        const navSectionLinks = document.querySelectorAll(".card__btn");
+        navSectionLinks.forEach((navLink) => {
+          navLink.addEventListener("click", (e) => {
+            e.preventDefault();
+            const sectionId = e.target.getAttribute("href").substring("#")[1];
+            showSection(sectionId);
+          });
+        });
+        showSection("mainContent");
+      }
+      function showSection(sectionId, sections = ["mainContent", "output"]) {
+        sections.forEach((section) => {
+          const currentSelection = document.getElementById(section);
+          currentSelection.style.display = "none";
+        });
+        const selectedSection = document.getElementById(sectionId);
+        selectedSection.style.display = "block";
+      }
+      document.addEventListener("DOMContentLoaded", function () {
+        toggleTheme();
+        SPALoading();
+        loadCategory();
+        loadYAMLFile(yamlFilePath, function (error, data) {
+          if (error) {
+            console.error(error);
+          } else {
+            console.log(data.entries);
+            Object.keys(data.entries).forEach((entry) => {
+              const container = document.getElementById("cardContainer");
+              const chartDescription = data.entries[entry][0]["description"];
+              const chartVersion = data.entries[entry][0]["version"];
+              const logo = data.entries[entry][0]["icon"];
+              const overview = data.entries[entry][0]["overview"];
+              const cardHtml = createCard(
+                entry,
+                chartDescription,
+                chartVersion,logo,overview
+              );
+              container.innerHTML += cardHtml;
+            });
+          }
+        });
+      });
+    </script>
+  </body>
 </html>

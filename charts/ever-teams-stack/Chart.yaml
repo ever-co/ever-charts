@@ -4,6 +4,7 @@ description: A Helm chart for Ever Teams Platform
 type: application
 version: 0.1.0
 appVersion: "1.16.0"
+icon: "https://raw.githubusercontent.com/ever-co/ever-charts/develop/_site/assets/logo-ever-teams.png"
 keywords:
   - "ever-teams-stack"
 dependencies:
