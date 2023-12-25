@@ -10,6 +10,7 @@ keywords:
 home: https://app.ever.team
 sources:
   - "https://github.com/ever-co/ever-teams"
+  - "https://github.com/ever-co/ever-charts"
 maintainers:
   - name: Ever Co. LTD
     email: ever@ever.co
