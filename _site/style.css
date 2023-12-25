@@ -225,7 +225,7 @@ ol {
   display: flex;
   flex-direction: column;
   row-gap: 20px;
-  margin-top: 20px;
+  /* margin-top: 20px; */
 }
 .filter__block .title {
   text-transform: uppercase;
@@ -243,6 +243,15 @@ ol {
   flex-wrap: wrap;
   color: #636a6e;
   border: 1px solid #dee2e6;
+  position:relative;
+}
+.card__project .card__project-link{
+  position:absolute;
+  opacity:0;
+  inset-0;
+  background-color:transparent;
+  cursor:pointer;
+
 }
 .card__project:hover {
   box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.05);
@@ -275,6 +284,9 @@ ol {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+.card__img img {
+  object-fit: fill;
 }
 .card__body {
   width: max-content;
@@ -422,7 +434,7 @@ ol {
 @media only screen and (min-width: 320px) {
   .card__body,
   .card__img {
-    max-width: none;
+    max-width: 100%;
   }
 }
 @media only screen and (min-width: 640px) {

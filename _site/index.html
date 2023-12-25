@@ -12,7 +12,7 @@
   <body>
     <header class="header">
       <nav class="container">
-        <a href="index.html" class="logo">
+        <a href="https://ever.co" class="logo">
           <svg
             width="149"
             height="34"
@@ -73,7 +73,7 @@
         </div>
         <div class="sidebar">
           <div class="filters">
-            <div class="filter__header">
+            <!-- <div class="filter__header">
               <p class="filter__title">FILTERS</p>
               <button class="filter__clean-btn">
                 <svg
@@ -96,7 +96,7 @@
                 <span>Reset</span>
               </button>
             </div>
-            <hr />
+            <hr /> -->
             <div class="filter__block">
               <h5 class="title">Category</h5>
               <ul class="filter__list"></ul>
@@ -110,7 +110,7 @@
 
     <footer class="footer">
       <div class="container">
-        <a href="index.html" class="logo">
+        <a href="https://ever.co" class="logo">
           <svg
             width="149"
             height="34"
@@ -138,9 +138,9 @@
             </p>
 
             <p class="footer__privary">
-              <a href="#">Terms of Service</a> |
-              <a href="#">Privacy Policy</a> |
-              <a href="#">Cookie Policy</a>
+              <a href="https://ever.co/tos">Terms of Service</a> |
+              <a href="https://ever.co/privacy">Privacy Policy</a> |
+              <a href="https://ever.co/cookies">Cookie Policy</a>
             </p>
           </div>
 
@@ -213,15 +213,17 @@
           .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
           .join(" ");
 
-          const chartPrefix = chart.match(/(ever-gauzy|ever-teams|ever-traduora|ever-demand)/i);
-          const chartImage = chartPrefix[0].toLowerCase();
+        const chartPrefix = chart.match(
+          /(ever-gauzy|ever-teams|ever-traduora|ever-demand)/i
+        );
+        const chartImage = chartPrefix[0].toLowerCase();
 
-          const logoUrl = `https://raw.githubusercontent.com/ever-co/ever-charts/develop/_site/assets/logo-${chartImage}.png`;
-          const imageLInk = `https://raw.githubusercontent.com/ever-co/ever-charts/develop/_site/assets/${chartImage}-overview.png`
+        const logoUrl = `https://raw.githubusercontent.com/ever-co/ever-charts/develop/_site/assets/logo-${chartImage}.png`;
+        const imageLink = `https://raw.githubusercontent.com/ever-co/ever-charts/develop/_site/assets/${chartImage}-overview.png`;
         const cardHtml = `
         <article class="card__project">
           <div class="card__img">
-            <img src="${imageLInk}" alt="${chartName} Overview" />
+            <img src="${imageLink}" alt="${chartName} Overview" />
             </div>
             <div class="card__body">
               <div class="project__header">
@@ -249,7 +251,7 @@
                   </span>
                 </h3>
                 <div class="project__items">
-                  <p class="project__item">
+                  <a href="https://ever.co" class="project__item">
                     <svg
                       width="12"
                       height="14"
@@ -262,9 +264,9 @@
                       />
                     </svg>
                     <span>ever-co</span>
-                  </p>
+                  </a>
 
-                  <p class="project__item">
+                  <a class="project__item" href="https://github.com/ever-co/ever-charts">
                     <svg
                       width="15"
                       height="14"
@@ -296,7 +298,7 @@
                       </defs>
                     </svg>
                     <span>helm-charts</span>
-                  </p>
+                  </a>
                 </div>
               </div>
             </div>
@@ -322,6 +324,7 @@
               ><span>Details</span></button
             >
           </div>
+          <a class="card__project-link" href="#${chart}" onclick="convertMarkdownToHTML('${chart}')"></a>
         </article>
       `;
         return cardHtml;
@@ -346,19 +349,18 @@
             console.error("Error:", error);
           });
       }
-      function filterData(){
-        const filtersHTML = document.querySelectorAll('.filter-input');
-        
-        filtersHTML.forEach((input,index)=>{
-          addEventListener('check',(e)=>{
-          const target = e.target
-          const value = target.value.toLowerCase();
-          console.log(value);
-          if(value){
+      function filterData() {
+        const filtersHTML = document.querySelectorAll(".filter-input");
 
-          }
-        })
-        })
+        filtersHTML.forEach((input, index) => {
+          addEventListener("check", (e) => {
+            const target = e.target;
+            const value = target.value.toLowerCase();
+            console.log(value);
+            if (value) {
+            }
+          });
+        });
       }
       function loadCategory() {
         const filterCategories = [
@@ -390,7 +392,7 @@
       }
 
       function SPALoading() {
-        const navSectionLinks = document.querySelectorAll(".card__btn");
+        const navSectionLinks = document.querySelectorAll(".card__btn,.card__project-link");
         navSectionLinks.forEach((navLink) => {
           navLink.addEventListener("click", (e) => {
             e.preventDefault();
