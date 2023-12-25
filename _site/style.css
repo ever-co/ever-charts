@@ -324,6 +324,9 @@ ol {
   column-gap: 15px;
   margin-top: auto;
 }
+.project__items a:hover{
+  text-decoration:underline;
+}
 .project__item {
   display: flex;
   align-items: center;
