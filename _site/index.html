@@ -12,7 +12,7 @@
   <body>
     <header class="header">
       <nav class="container">
-        <a href="index.html" className="logo">
+        <a href="index.html" class="logo">
           <svg
             width="149"
             height="34"
@@ -110,7 +110,7 @@
 
     <footer class="footer">
       <div class="container">
-        <a href="index.html" className="logo">
+        <a href="index.html" class="logo">
           <svg
             width="149"
             height="34"
@@ -207,23 +207,29 @@
         xhr.send();
       }
 
-      function createCard(chart, chartDescription, chartVersion,chartLogo,chartOverview) {
-        chartName = chart
+      function createCard(chart, chartDescription, chartVersion) {
+        const chartName = chart
           .split("-")
           .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
           .join(" ");
+
+          const chartPrefix = chart.match(/(ever-gauzy|ever-teams|ever-traduora|ever-demand)/i);
+          const chartImage = chartPrefix[0].toLowerCase();
+
+          const logoUrl = `https://raw.githubusercontent.com/ever-co/ever-charts/develop/_site/assets/logo-${chartImage}.png`;
+          const imageLInk = `https://raw.githubusercontent.com/ever-co/ever-charts/develop/_site/assets/${chartImage}-overview.png`
         const cardHtml = `
         <article class="card__project">
           <div class="card__img">
-            <img src="${chartOverview}" alt="Image" />
-          </div>
-          <div class="card__body">
-            <div class="project__header">
-              <img
-                class="project__logo"
-                src="${chartLogo}"
-                alt="Logo"
-              />
+            <img src="${imageLInk}" alt="${chartName} Overview" />
+            </div>
+            <div class="card__body">
+              <div class="project__header">
+                <img
+                  class="project__logo"
+                  src="${logoUrl}"
+                  alt="Logo ${chartName}"
+                />
               <div class="project__desc">
                 <h3 class="project__title">
                   <span>${chartName}</span>
@@ -340,7 +346,20 @@
             console.error("Error:", error);
           });
       }
+      function filterData(){
+        const filtersHTML = document.querySelectorAll('.filter-input');
+        
+        filtersHTML.forEach((input,index)=>{
+          addEventListener('check',(e)=>{
+          const target = e.target
+          const value = target.value.toLowerCase();
+          console.log(value);
+          if(value){
 
+          }
+        })
+        })
+      }
       function loadCategory() {
         const filterCategories = [
           { name: "Ever Teams", numberItem: 1 },
@@ -353,7 +372,7 @@
           filterList.innerHTML += `
               <li>
                 <label for="ever-help-${index}">
-                  <input type="checkbox" id="ever-help-${index}" />
+                  <input type="checkbox" class="filter-input" id="ever-help-${index}" value="${category.name}" />
                   <span class="filter__text">${category.name}</span>
                   <span>(${category.numberItem})</span>
                 </label>
@@ -393,6 +412,7 @@
         toggleTheme();
         SPALoading();
         loadCategory();
+        filterData();
         loadYAMLFile(yamlFilePath, function (error, data) {
           if (error) {
             console.error(error);
@@ -403,11 +423,10 @@
               const chartDescription = data.entries[entry][0]["description"];
               const chartVersion = data.entries[entry][0]["version"];
               const logo = data.entries[entry][0]["icon"];
-              const overview = data.entries[entry][0]["overview"];
               const cardHtml = createCard(
                 entry,
                 chartDescription,
-                chartVersion,logo,overview
+                chartVersion
               );
               container.innerHTML += cardHtml;
             });
