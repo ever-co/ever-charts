@@ -222,7 +222,7 @@
         const imageLink = `https://raw.githubusercontent.com/ever-co/ever-charts/develop/_site/assets/${chartImage}-overview.png`;
         const cardHtml = `
         <article class="card__project">
-          <div class="card__img">
+          <div class="card__img" onclick="convertMarkdownToHTML('${chart}')">
             <img src="${imageLink}" alt="${chartName} Overview" />
             </div>
             <div class="card__body">
@@ -324,7 +324,6 @@
               ><span>Details</span></button
             >
           </div>
-          <a class="card__project-link" href="#${chart}" onclick="convertMarkdownToHTML('${chart}')"></a>
         </article>
       `;
         return cardHtml;

@@ -245,14 +245,6 @@ ol {
   border: 1px solid #dee2e6;
   position:relative;
 }
-.card__project .card__project-link{
-  position:absolute;
-  opacity:0;
-  inset-0;
-  background-color:transparent;
-  cursor:pointer;
-
-}
 .card__project:hover {
   box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.05);
 }
@@ -262,7 +254,9 @@ ol {
   color: #fff;
 }
 .card__img {
+  max-width: 100%;
   flex-grow: 1;
+  cursor:pointer;
 }
 
 .card__project .project__logo {
@@ -282,11 +276,16 @@ ol {
 .project__logo,
 .card__img img {
   width: 100%;
-  height: 100%;
+  /* height: 100%; */
   object-fit: cover;
+  /* height:460px; */
 }
 .card__img img {
-  object-fit: fill;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  max-height: 460px; /* Remplacez par la hauteur souhaitée */
+  /* object-fit: contain; */
 }
 .card__body {
   width: max-content;
