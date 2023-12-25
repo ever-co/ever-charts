@@ -207,23 +207,38 @@
         xhr.send();
       }
 
-      function createCard(chart, chartDescription, chartVersion,chartLogo,chartOverview) {
-        chartName = chart
+      function createCard(chart, chartDescription, chartVersion) {
+        const chartName = chart
           .split("-")
           .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
           .join(" ");
+          const logoItem = {
+            'ever-gauzy':'https://raw.githubusercontent.com/ever-co/ever-charts/develop/_site/assets/logo-ever-gauzy.png',
+            'ever-teams': 'https://raw.githubusercontent.com/ever-co/ever-charts/develop/_site/assets/logo-ever-teams.png',
+            'ever-traduora': 'https://raw.githubusercontent.com/ever-co/ever-charts/develop/_site/assets/logo-ever-traduora.png',
+            'ever-demand': 'https://raw.githubusercontent.com/ever-co/ever-charts/develop/_site/assets/logo-ever-demand.png',
+          }
+          const overviewImage ={
+            'ever-gauzy':'https://raw.githubusercontent.com/ever-co/ever-charts/develop/_site/assets/ever-gauzy-overview.png',
+            'ever-teams': 'https://raw.githubusercontent.com/ever-co/ever-charts/develop/_site/assets/ever-teams-overview.png',
+            'ever-traduora': 'https://raw.githubusercontent.com/ever-co/ever-charts/develop/_site/assets/ever-traduora-overview.png',
+            'ever-demand': 'https://raw.githubusercontent.com/ever-co/ever-charts/develop/_site/assets/ever-demand-overview.jpg',
+          }
+          const chartPrefix = chart.match(/(ever-gauzy|ever-teams|ever-traduora|ever-demand)/i);
+          const logoUrl = logoItem[chartPrefix[0]];
+          const imageLInk = overviewImage[chartPrefix[0]];
         const cardHtml = `
         <article class="card__project">
           <div class="card__img">
-            <img src="${chartOverview}" alt="${chartName} Overview" />
-          </div>
-          <div class="card__body">
-            <div class="project__header">
-              <img
-                class="project__logo"
-                src="${chartLogo}"
-                alt="Logo"
-              />
+            <img src="${imageLInk}" alt="${chartName} Overview" />
+            </div>
+            <div class="card__body">
+              <div class="project__header">
+                <img
+                  class="project__logo"
+                  src="${logoUrl}"
+                  alt="Logo"
+                />
               <div class="project__desc">
                 <h3 class="project__title">
                   <span>${chartName}</span>
@@ -417,11 +432,10 @@
               const chartDescription = data.entries[entry][0]["description"];
               const chartVersion = data.entries[entry][0]["version"];
               const logo = data.entries[entry][0]["icon"];
-              const overview = data.entries[entry][0]["overview"];
               const cardHtml = createCard(
                 entry,
                 chartDescription,
-                chartVersion,logo,overview
+                chartVersion
               );
               container.innerHTML += cardHtml;
             });
