@@ -54,7 +54,10 @@ The command deploys ever-gauzy on the Kubernetes cluster in the default configur
 To uninstall/delete the `my-release` deployment:
 
 ```console
+$ # Helm 2
 helm delete --purge my-release
+$ # Helm 3
+helm uninstall my-release
 ```
 
 The command removes nearly all the Kubernetes components associated with the chart and deletes the release.
