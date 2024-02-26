@@ -3,13 +3,13 @@ entries:
   ever-gauzy:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2023-12-25T17:03:41.176851705Z"
+    created: "2024-02-26T14:45:49.353377438Z"
     dependencies:
     - name: ever-gauzy-api
       repository: https://charts.ever.co
       version: 0.1.3
     description: A Helm chart for Ever Gauzy Platform
-    digest: 94c0dfcc0e65e62f046e747deaa0d660569963560f7018b5e8041d12b3b937a8
+    digest: f54f1e6619da67ca2d755c55da3fdb48e96d9c0a054094494c245523b0b503fb
     home: https://gauzy.co
     icon: https://raw.githubusercontent.com/ever-co/ever-charts/develop/_site/assets/logo-ever-gauzy.png
     keywords:
@@ -27,7 +27,7 @@ entries:
     version: 0.1.9
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2023-12-25T17:03:41.17081892Z"
+    created: "2024-02-26T14:45:49.348529253Z"
     dependencies:
     - name: ever-gauzy-api
       repository: https://charts.ever.co
@@ -50,14 +50,14 @@ entries:
   ever-gauzy-api:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2023-12-25T17:03:41.18632508Z"
+    created: "2024-02-26T14:45:49.362145212Z"
     dependencies:
     - condition: global.env.production
       name: postgresql
       repository: https://charts.bitnami.com/bitnami
       version: 13.2.9
     description: A Helm chart for Ever Gauzy Platform
-    digest: 7ce5bc4d3435fa02799f2576cb0cc240ec38dee9488c94486145b17a07dbe705
+    digest: 7ad8d6965d34f2258cc71552bf07c9ec6ce29a9e5aa5acdab58288f55b0a73b8
     home: https://gauzy.co
     icon: https://raw.githubusercontent.com/ever-co/ever-charts/develop/_site/assets/logo-ever-gauzy.png
     keywords:
@@ -75,7 +75,7 @@ entries:
     version: 0.1.3
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2023-12-25T17:03:41.181135829Z"
+    created: "2024-02-26T14:45:49.358031247Z"
     dependencies:
     - condition: global.env.production
       name: postgresql
@@ -99,9 +99,9 @@ entries:
   ever-teams:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2023-12-25T17:03:41.18747556Z"
+    created: "2024-02-26T14:45:49.36371422Z"
     description: A Helm chart for Ever Teams Platform
-    digest: c35897dd0d4862988333688b03a340ad95593e767e1c175dcd2dc6c65259610a
+    digest: 44a14645dbe84c2b105035ae77ae204f4dd53b4518de82836e3b3ac452961b7c
     home: https://app.ever.team
     icon: https://raw.githubusercontent.com/ever-co/ever-charts/develop/_site/assets/logo-ever-teams.png
     keywords:
@@ -119,7 +119,7 @@ entries:
     version: 0.1.2
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2023-12-25T17:03:41.186932571Z"
+    created: "2024-02-26T14:45:49.36315535Z"
     description: A Helm chart for Ever Teams Platform
     digest: 964892361abd982fb3f06e97c110c253b956f5a6aecd797a7f4925dbd988e8ba
     home: https://app.ever.team
@@ -138,7 +138,7 @@ entries:
   ever-teams-stack:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2023-12-25T17:03:41.193472092Z"
+    created: "2024-02-26T14:45:49.368982684Z"
     dependencies:
     - name: ever-teams
       repository: https://charts.ever.co
@@ -147,7 +147,7 @@ entries:
       repository: https://charts.ever.co
       version: 0.1.3
     description: A Helm chart for Ever Teams Platform
-    digest: 18badbe61a4812a1c70a4bc2393106ede3232ea9677aa64f65333eb705a6fbd2
+    digest: a0a57a6afe8a28ea099b9c7b8b9f4db003b805e6589d98914cb4fc2b03687db9
     home: https://app.ever.team
     icon: https://raw.githubusercontent.com/ever-co/ever-charts/develop/_site/assets/logo-ever-teams.png
     keywords:
@@ -163,4 +163,4 @@ entries:
     urls:
     - ever-teams-stack-0.1.0.tgz
     version: 0.1.0
-generated: "2023-12-25T17:03:41.165476138Z"
+generated: "2024-02-26T14:45:49.342488061Z"
