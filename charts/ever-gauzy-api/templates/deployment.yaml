@@ -61,7 +61,7 @@ spec:
               value: {{ .Values.sentry.sentryPostgresTrackingEnabled | quote }}
             - name: DB_HOST
             {{- if .Values.postgresql.global.external_db }}
-              value: {{ .Values.postgresql.global.postgresql.auth.username | quote }}
+              value: {{ .Values.postgresql.global.postgresql.auth.host | quote }}
             {{- else }}
               value: "{{ .Release.Name }}-postgresql"
             {{- end }}
