@@ -3,13 +3,13 @@ entries:
   ever-gauzy:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2024-02-26T14:45:49.353377438Z"
+    created: "2024-03-07T22:55:49.505809211Z"
     dependencies:
     - name: ever-gauzy-api
       repository: https://charts.ever.co
       version: 0.1.3
     description: A Helm chart for Ever Gauzy Platform
-    digest: f54f1e6619da67ca2d755c55da3fdb48e96d9c0a054094494c245523b0b503fb
+    digest: 4e4195f79d415052d87e19807c24dc3172ee02eaf806a32f4193e4a30e4b5ac5
     home: https://gauzy.co
     icon: https://raw.githubusercontent.com/ever-co/ever-charts/develop/_site/assets/logo-ever-gauzy.png
     keywords:
@@ -27,7 +27,7 @@ entries:
     version: 0.1.9
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2024-02-26T14:45:49.348529253Z"
+    created: "2024-03-07T22:55:49.501022425Z"
     dependencies:
     - name: ever-gauzy-api
       repository: https://charts.ever.co
@@ -50,7 +50,32 @@ entries:
   ever-gauzy-api:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2024-02-26T14:45:49.362145212Z"
+    created: "2024-03-07T22:55:49.518996732Z"
+    dependencies:
+    - condition: global.env.production
+      name: postgresql
+      repository: https://charts.bitnami.com/bitnami
+      version: 13.2.9
+    description: A Helm chart for Ever Gauzy Platform
+    digest: d916dc10c0a623e0fc2edb5ce520574cecf89af65f9e7aa7fd712749d7d2772b
+    home: https://gauzy.co
+    icon: https://raw.githubusercontent.com/ever-co/ever-charts/develop/_site/assets/logo-ever-gauzy.png
+    keywords:
+    - ever-gauzy-api
+    maintainers:
+    - email: ever@ever.co
+      name: Ever Co. LTD
+    name: ever-gauzy-api
+    sources:
+    - https://github.com/ever-co/ever-gauzy
+    - https://github.com/ever-co/ever-charts
+    type: application
+    urls:
+    - ever-gauzy-api-0.1.4.tgz
+    version: 0.1.4
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2024-03-07T22:55:49.514435005Z"
     dependencies:
     - condition: global.env.production
       name: postgresql
@@ -75,7 +100,7 @@ entries:
     version: 0.1.3
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2024-02-26T14:45:49.358031247Z"
+    created: "2024-03-07T22:55:49.510370001Z"
     dependencies:
     - condition: global.env.production
       name: postgresql
@@ -99,9 +124,9 @@ entries:
   ever-teams:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2024-02-26T14:45:49.36371422Z"
+    created: "2024-03-07T22:55:49.520114646Z"
     description: A Helm chart for Ever Teams Platform
-    digest: 44a14645dbe84c2b105035ae77ae204f4dd53b4518de82836e3b3ac452961b7c
+    digest: b86334e88b8d4d54d81e730d1ec935892e1789031c8cea8dbb38e6c433531b01
     home: https://app.ever.team
     icon: https://raw.githubusercontent.com/ever-co/ever-charts/develop/_site/assets/logo-ever-teams.png
     keywords:
@@ -119,7 +144,7 @@ entries:
     version: 0.1.2
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2024-02-26T14:45:49.36315535Z"
+    created: "2024-03-07T22:55:49.519498602Z"
     description: A Helm chart for Ever Teams Platform
     digest: 964892361abd982fb3f06e97c110c253b956f5a6aecd797a7f4925dbd988e8ba
     home: https://app.ever.team
@@ -138,7 +163,7 @@ entries:
   ever-teams-stack:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2024-02-26T14:45:49.368982684Z"
+    created: "2024-03-07T22:55:49.526013465Z"
     dependencies:
     - name: ever-teams
       repository: https://charts.ever.co
@@ -147,7 +172,7 @@ entries:
       repository: https://charts.ever.co
       version: 0.1.3
     description: A Helm chart for Ever Teams Platform
-    digest: a0a57a6afe8a28ea099b9c7b8b9f4db003b805e6589d98914cb4fc2b03687db9
+    digest: f8478afdbffbb55eead0de17ea7ffd244109b1cf313cf7d55322e5cbd49222ef
     home: https://app.ever.team
     icon: https://raw.githubusercontent.com/ever-co/ever-charts/develop/_site/assets/logo-ever-teams.png
     keywords:
@@ -163,4 +188,4 @@ entries:
     urls:
     - ever-teams-stack-0.1.0.tgz
     version: 0.1.0
-generated: "2024-02-26T14:45:49.342488061Z"
+generated: "2024-03-07T22:55:49.495028969Z"
