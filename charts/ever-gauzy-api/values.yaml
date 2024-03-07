@@ -178,6 +178,9 @@ postgresql:
   global:
     ## @param global.imageRegistry Global Docker image registry
     ##
+    # Uses external db endpoint when set to true else it uses database provisioned within the cluster.
+    external_db: true
+
     imageRegistry: ""
     ## @param global.imagePullSecrets Global Docker registry secret names as an array
     ## e.g.
