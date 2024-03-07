@@ -140,7 +140,7 @@ The command removes nearly all the Kubernetes components associated with the cha
 | `postgresql.global.imagePullSecrets` | Global Docker registry secret names as an array | `[]` |
 | `postgresql.global.storageClass` | Global StorageClass for Persistent Volume(s) | `""` |
 | `postgresql.auth.postgresPassword` | Password for the "postgres" admin user | `""` |
-| `postgresql.auth.hos` | Host of a custom database to connect to | `""` |
+| `postgresql.auth.host` | Host of a custom database to connect to | `""` |
 | `postgresql.auth.username` | Name for a custom user to create | `""` |
 | `postgresql.auth.password` | Password for the custom user to create | `""` |
 | `postgresql.auth.database` | Name for a custom database to create | `""` |
