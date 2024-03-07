@@ -203,6 +203,7 @@ postgresql:
       ##
       auth:
         postgresPassword: ""
+        host: ""
         username: ""
         password: ""
         database: ""
