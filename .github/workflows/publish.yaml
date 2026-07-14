@@ -9,7 +9,7 @@ jobs:
     runs-on: ${{ vars.RUNNER_LINUX_X64_4 || 'ubuntu-latest' }}
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v7
       - name: Deploy to GitHub Pages 🚀
         uses: crazy-max/ghaction-github-pages@v4
         with:
