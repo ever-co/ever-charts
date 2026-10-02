@@ -121,6 +121,16 @@ gitHub:
   githubCallbackUrl: ""  # Specify the GitHub callback URL
   githubPostInstallUrl: ""  # Specify the GitHub post-installation URL
 
+# Anonymous usage statistics of the API (one signed report a day to Ever Platform: counts and monthly
+# totals, never a name or a record; see packages/plugins/ever-stats/README.md in ever-gauzy).
+# Each value is set in the environment only when it is not empty; empty keeps the API defaults
+# (statistics on, self-hosted, country undeclared, operator = first super admin of a single tenant).
+everPlatform:
+  statsEnabled: ""  # "false" switches the anonymous usage statistics off (EVER_STATS_ENABLED)
+  installSource: ""  # How this installation is deployed: self-hosted, cloud, partner:<slug>... (EVER_INSTALL_SOURCE)
+  operatorEmails: ""  # The operators of the installation, comma separated (EVER_OPERATOR_EMAILS)
+  country: ""  # Two-letter country to declare in the reports (EVER_STATS_COUNTRY)
+
 podAnnotations: {}
 podLabels: {}
 

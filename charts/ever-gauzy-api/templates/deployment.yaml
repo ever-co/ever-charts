@@ -159,6 +159,24 @@ spec:
               value: {{ .Values.gitHub.githubCallbackUrl | quote }}
             - name: GAUZY_GITHUB_POST_INSTALL_URL
               value: {{ .Values.gitHub.githubPostInstallUrl | quote }}
+            {{- with .Values.everPlatform }}
+            {{- if or (kindIs "bool" .statsEnabled) .statsEnabled }}
+            - name: EVER_STATS_ENABLED
+              value: {{ .statsEnabled | toString | quote }}
+            {{- end }}
+            {{- if .installSource }}
+            - name: EVER_INSTALL_SOURCE
+              value: {{ .installSource | quote }}
+            {{- end }}
+            {{- if .operatorEmails }}
+            - name: EVER_OPERATOR_EMAILS
+              value: {{ .operatorEmails | quote }}
+            {{- end }}
+            {{- if .country }}
+            - name: EVER_STATS_COUNTRY
+              value: {{ .country | quote }}
+            {{- end }}
+            {{- end }}
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           ports:
             - name: http
